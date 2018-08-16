@@ -1,0 +1,32 @@
+[
+  {
+    "name": "ng-japan",
+    "city": "Tokyo",
+    "url": "https://ngjapan.org",
+    "logo": "/assets/ng-japan.svg",
+    "location": {
+      "lat": 35.6895608,
+      "lng": 139.6897095
+    }
+  },
+  {
+    "name": "ng-kyoto",
+    "city": "Kyoto",
+    "url": "https://ng-kyoto.github.io",
+    "logo": "/assets/ng-kyoto.png",
+    "location": {
+      "lat": 34.985849,
+      "lng": 135.7565727
+    }
+  },
+  {
+    "name": "ng-fukuoka",
+    "city": "Fukuoka",
+    "url": "https://ng-fukuoka.github.io/",
+    "logo": "/assets/ng-fukuoka.svg",
+    "location": {
+      "lat": 33.5900449,
+      "lng": 130.4184165
+    }
+  }
+]
