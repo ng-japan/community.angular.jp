@@ -28,5 +28,15 @@
       "lat": 33.5900449,
       "lng": 130.4184165
     }
+  },
+  {
+    "name": "ng-kobe",
+    "city": "Kobe, Hyogo",
+    "url": "https://ng-kobe.connpass.com/",
+    "logo": "/assets/ng-kobe.png",
+    "location": {
+      "lat": 34.6797674,
+      "lng": 135.1779935
+    }
   }
 ]
