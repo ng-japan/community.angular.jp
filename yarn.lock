@@ -185,10 +185,6 @@
   dependencies:
     tslib "^1.9.0"
 
-"@kaizenplatform/prettier-config@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@kaizenplatform/prettier-config/-/prettier-config-0.1.0.tgz#f84bc8a030efe1f50717b70926f0b69b4ba079a9"
-
 "@lacolaco/ngx-grid-layout@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@lacolaco/ngx-grid-layout/-/ngx-grid-layout-0.3.0.tgz#9229ec8a893947b7dc2d7f122a13574a50221e50"

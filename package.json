@@ -29,7 +29,6 @@
     "@angular/cli": "~6.1.1",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
-    "@kaizenplatform/prettier-config": "^0.1.0",
     "@types/googlemaps": "^3.30.11",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
