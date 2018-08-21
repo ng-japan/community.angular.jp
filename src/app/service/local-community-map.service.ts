@@ -53,7 +53,7 @@ export class LocalCommunityMapService {
         position: community.location,
         icon: {
           url: community.logo,
-          scaledSize: new google.maps.Size(36, 36),
+          scaledSize: new google.maps.Size(32, 32),
         },
       });
       marker.addListener('click', () =>

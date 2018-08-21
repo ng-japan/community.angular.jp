@@ -8,7 +8,7 @@ export const initialState: State = {
         lat: 37.6,
         lng: 135.2,
       },
-      zoom: 5,
+      zoom: 6,
     },
   },
   localCommunities: {
