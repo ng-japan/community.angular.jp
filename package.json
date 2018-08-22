@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "ng build angular-japan-map --prod",
+    "build": "ng build app --prod",
     "format": "prettier --write 'src/**/*.ts' 'src/**/*.scss'"
   },
   "dependencies": {
