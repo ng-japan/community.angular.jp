@@ -1,0 +1,70 @@
+<grid-layout class="root" [rows]="['auto', '1fr']" [justifyItems]="'center'">
+
+  <grid-layout class="hero" [rows]="['auto', 'auto']" [justifyItems]="'center'">
+    <div class="logo">
+      <img src="/assets/image/ng-japan.svg">
+    </div>
+  </grid-layout>
+
+  <div class="nav">
+
+    <mat-card>
+      <mat-card-title>
+        Angular日本ユーザー会へ<br>ようこそ！
+      </mat-card-title>
+
+      <mat-card-content>
+        Angular日本ユーザー会は日本のAngular開発者のためのコミュニティです。<br>イベントの開催やドキュメントの翻訳などをおこなっています。
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title>
+        Join our Slack!
+      </mat-card-title>
+
+      <mat-card-content>
+        Angular日本ユーザー会のSlackワークスペースに参加しましょう！
+      </mat-card-content>
+
+      <mat-card-actions>
+        <a mat-button color="primary" href="http://slack-invite.ngjapan.org/" target="_blank">
+          Slackに参加する
+        </a>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title>
+        Check our events!
+      </mat-card-title>
+
+      <mat-card-content>
+        Angular日本ユーザー会が開催するイベントを確認しましょう！
+      </mat-card-content>
+
+      <mat-card-actions>
+        <a mat-button color="primary" href="https://ngjapan.connpass.com/" target="_blank">
+          Connpassを開く
+        </a>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title>
+        Angular Japan Communities
+      </mat-card-title>
+
+      <mat-card-content>
+        日本各地のAngularコミュニティを見つけましょう！
+      </mat-card-content>
+
+      <mat-card-actions>
+        <a mat-button color="primary" routerLink="/communities">
+          マップを開く
+        </a>
+      </mat-card-actions>
+    </mat-card>
+
+
+  </div>

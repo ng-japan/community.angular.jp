@@ -1,0 +1,35 @@
+.root {
+  height: 100%;
+}
+
+.content {
+  padding: 32px;
+}
+
+.hero {
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  padding: 0 16px;
+  align-items: start;
+  justify-content: center;
+  align-content: start;
+}
+
+.logo {
+  img {
+    width: 128px;
+    height: 128px;
+  }
+}
+
+mat-card {
+  border-radius: 5px;
+  margin: 8px;
+  max-width: 300px;
+}

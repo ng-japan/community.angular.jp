@@ -1,24 +1,16 @@
 .root {
-  height: 100vh;
+  height: 100%;
 }
 
-.sidebar {
-  padding: 8px;
-  width: 200px;
+a.title {
+  color: inherit;
+  text-decoration: none;
 
-  .title {
-    padding: 4px 8px;
-    img {
-      width: 100%;
-      cursor: pointer;
-    }
+  &:visited {
+    text-decoration: none;
   }
+}
 
-  .community-button {
-    cursor: pointer;
-  }
-
-  .copyright {
-    font-size: 11px;
-  }
+.footer {
+  padding-top: 4px;
 }

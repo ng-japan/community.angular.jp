@@ -20,16 +20,6 @@
     }
   },
   {
-    "name": "ng-fukuoka",
-    "city": "Fukuoka",
-    "url": "https://ng-fukuoka.github.io/",
-    "logo": "/assets/ng-fukuoka.svg",
-    "location": {
-      "lat": 33.5900449,
-      "lng": 130.4184165
-    }
-  },
-  {
     "name": "ng-kobe",
     "city": "Kobe, Hyogo",
     "url": "https://ng-kobe.connpass.com/",
@@ -37,6 +27,16 @@
     "location": {
       "lat": 34.6797674,
       "lng": 135.1779935
+    }
+  },
+  {
+    "name": "ng-fukuoka",
+    "city": "Fukuoka",
+    "url": "https://ng-fukuoka.github.io/",
+    "logo": "/assets/ng-fukuoka.svg",
+    "location": {
+      "lat": 33.5900449,
+      "lng": 130.4184165
     }
   }
 ]

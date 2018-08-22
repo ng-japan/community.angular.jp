@@ -1,27 +1,30 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GridLayoutModule } from '@lacolaco/ngx-grid-layout';
 import { ReactiveStoreModule } from '@lacolaco/ngx-store';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initialState } from './initialState';
-import { customElements, declarations, entryComponents } from './view';
+import { customElements } from './view/element';
+import { CommunitiesModule } from './view/page/communities/communities.module';
+import { HomeModule } from './view/page/home/home.module';
 
 @NgModule({
-  declarations: [AppComponent, ...declarations],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     GridLayoutModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
+    MatToolbarModule,
     ReactiveStoreModule.forRoot(initialState),
+    AppRoutingModule,
+    HomeModule,
+    CommunitiesModule,
   ],
-  entryComponents: [...entryComponents],
   providers: [],
   bootstrap: [AppComponent],
 })

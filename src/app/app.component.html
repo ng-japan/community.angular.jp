@@ -1,36 +1,20 @@
-<grid-layout class="root" [columns]="['auto', '1fr']">
+<grid-layout class="root" [rows]="['auto', '0', '1fr', 'auto']">
 
-  <grid-layout class="sidebar" [rows]="['auto', '1fr', 'auto']" [justifyContent]="'center'">
+  <mat-toolbar color="primary">
+    <a class="title" routerLink="/">Angular Japan User Group</a>
+  </mat-toolbar>
 
-    <div class="title">
-      <img src="/assets/title.svg" alt="Angular Japan Communities" (click)="resetMap()">
+  <router-outlet></router-outlet>
+
+
+  <grid-layout class="footer mat-caption" [rows]="['auto', 'auto']" [justifyItems]="'center'">
+    <div class="copyright">
+      &copy; Angular Japan User Group
     </div>
-
-    <mat-list>
-      <mat-list-item *ngFor="let community of localCommunities$ | async">
-        <div matLine>
-          {{community.name}}
-        </div>
-        <button mat-icon-button (click)="selectCommunity(community)">
-          <mat-icon>place</mat-icon>
-        </button>
-        <div matLine>{{community.city}}</div>
-      </mat-list-item>
-    </mat-list>
-
-    <grid-layout class="footer" [rows]="['auto', 'auto', 'auto']" [justifyItems]="'center'">
-      <a mat-button class="contribute" href="https://github.com/ng-japan/angular-japan-communities" target="_blank">
-        <mat-icon>edit</mat-icon>
-        Contribute
-      </a>
-      <img src="/assets/ng-japan.svg" alt="ng-japan" width="128px">
-      <div class="copyright">
-        &copy; Angular Japan User Group
-      </div>
-    </grid-layout>
-
+    <a class="contribute" href="https://github.com/ng-japan/community.angular.jp" target="_blank">
+      GitHub
+    </a>
   </grid-layout>
 
-  <div #mapContainer></div>
 
 </grid-layout>
