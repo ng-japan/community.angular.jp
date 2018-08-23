@@ -1,7 +1,7 @@
-import { HomePageComponent } from './view/page/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommunitiesPageComponent } from './view/page/communities/communities.component';
+import { HomePageComponent } from './view/page/home/home.component';
 
 @NgModule({
   imports: [
@@ -14,6 +14,9 @@ import { CommunitiesPageComponent } from './view/page/communities/communities.co
       {
         path: 'communities',
         component: CommunitiesPageComponent,
+        data: {
+          title: 'Angular Japan Communities',
+        },
       },
     ]),
   ],
