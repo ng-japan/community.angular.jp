@@ -20,7 +20,7 @@ const template = (localCommunity: LocalCommunity) => html`
 </div>
 `;
 
-export class LocalCommunityInfo extends HTMLElement {
+export class LocalCommunityInfoElement extends HTMLElement {
   constructor(localCommunity: LocalCommunity) {
     super();
     const root = this.attachShadow({ mode: 'open' });

@@ -1,9 +1,9 @@
-import { LocalCommunity } from './../core/model';
 import { Injectable, NgZone } from '@angular/core';
 import { Store } from '@lacolaco/reactive-store';
 import { State } from '../core/state';
-import { LocalCommunityInfo } from '../view/element/local-community-info';
-import { initialState } from '../initialState';
+import { resetMapOptions, setCenter } from '../thunk/map';
+import { createCommunityInfoWindow, createCommunityMarker, createMap } from '../util/local-community-map';
+import { LocalCommunity } from './../core/model';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +19,7 @@ export class LocalCommunityMapService {
 
   initialize(containerElement: Element) {
     const initialMapOptions = this.store.value.map.mapOptions;
-    this.mapRef = new google.maps.Map(containerElement, initialMapOptions);
+    this.mapRef = createMap(containerElement, initialMapOptions);
 
     this.store.select(state => state.map.mapOptions).subscribe(mapOptions => {
       if (this.mapRef) {
@@ -33,29 +33,14 @@ export class LocalCommunityMapService {
   }
 
   resetMapOptions() {
-    this.store.patch(state => ({
-      ...state,
-      map: {
-        ...state.map,
-        mapOptions: {
-          ...initialState.map.mapOptions,
-        },
-      },
-    }));
+    this.store.patch(resetMapOptions());
   }
 
   resetMarkers(communities: LocalCommunity[]) {
     this.markerRefs.forEach(marker => marker.setMap(null));
 
     this.markerRefs = communities.map(community => {
-      const marker = new google.maps.Marker({
-        title: community.name,
-        position: community.location,
-        icon: {
-          url: community.logo,
-          scaledSize: new google.maps.Size(32, 32),
-        },
-      });
+      const marker = createCommunityMarker(community);
       marker.addListener('click', () =>
         this.ngZone.run(() => {
           this.selectCommunity(community);
@@ -76,22 +61,10 @@ export class LocalCommunityMapService {
     if (!marker) {
       return;
     }
-    const infoWindow = new google.maps.InfoWindow({
-      content: new LocalCommunityInfo(community),
-    });
+    const infoWindow = createCommunityInfoWindow(community);
     infoWindow.open(marker.getMap(), marker);
 
-    this.store.patch(state => ({
-      ...state,
-      map: {
-        ...state.map,
-        mapOptions: {
-          ...state.map.mapOptions,
-          center: community.location,
-          zoom: 7,
-        },
-      },
-    }));
+    this.store.patch(setCenter(community.location));
 
     this.infoWindowRef = infoWindow;
   }
