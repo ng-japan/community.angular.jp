@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { StoreModule } from '@lacolaco/ngx-store';
+import { initialState } from '../../../initialState';
 import { CommunitiesPageComponent } from './communities.component';
+import { CommunitiesModule } from './communities.module';
 
 describe('CommunitiesComponent', () => {
   let component: CommunitiesPageComponent;
@@ -8,7 +10,7 @@ describe('CommunitiesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CommunitiesPageComponent],
+      imports: [CommunitiesModule, StoreModule.forRoot(initialState)],
     }).compileComponents();
   }));
 
