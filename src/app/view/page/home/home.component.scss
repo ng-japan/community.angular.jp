@@ -32,7 +32,11 @@
 mat-card {
   border-radius: 5px;
   margin: 8px;
-  max-width: 200px;
+  width: 200px;
+
+  @media (max-width: 512px) {
+    width: 90%;
+  }
 
   [mat-card-image] {
     object-fit: contain;
@@ -42,5 +46,11 @@ mat-card {
 
   mat-card-content {
     min-height: 64px;
+  }
+}
+
+.mat-list-item {
+  .mat-list-icon {
+    margin-right: 8px;
   }
 }
