@@ -5,6 +5,7 @@ export interface State {
     mapOptions: MapOptions;
   };
   localCommunities: {
+    fetching: number;
     items: LocalCommunity[];
   };
 }

@@ -1,17 +1,12 @@
 import { State } from './core/state';
+import { initialMapOptions } from './util/local-community-map';
 
 export const initialState: State = {
   map: {
-    mapOptions: {
-      // Show entire Japan
-      center: {
-        lat: 37.6,
-        lng: 135.2,
-      },
-      zoom: 6,
-    },
+    mapOptions: initialMapOptions,
   },
   localCommunities: {
+    fetching: 0,
     items: [],
   },
 };
