@@ -1,17 +1,16 @@
 <grid-layout class="root" [rows]="['auto', '1fr']" [justifyItems]="'center'">
 
   <grid-layout class="hero" [rows]="['auto', 'auto']" [justifyItems]="'center'">
-    <div class="logo">
-      <img src="/assets/image/ng-japan.svg">
+    <div class="mat-title">
+      Angular日本ユーザー会へようこそ！
     </div>
   </grid-layout>
 
   <div class="nav">
 
     <mat-card>
-      <mat-card-title>
-        Angular日本ユーザー会へ<br>ようこそ！
-      </mat-card-title>
+
+      <img mat-card-image src="/assets/image/ng-japan.svg" alt="ng-japan">
 
       <mat-card-content>
         Angular日本ユーザー会は日本のAngular開発者のためのコミュニティです。<br>イベントの開催やドキュメントの翻訳などをおこなっています。
@@ -19,12 +18,10 @@
     </mat-card>
 
     <mat-card>
-      <mat-card-title>
-        Join our Slack!
-      </mat-card-title>
+      <img mat-card-image src="/assets/image/slack_logo.svg" alt="slack">
 
       <mat-card-content>
-        Angular日本ユーザー会のSlackワークスペースに参加しましょう！
+        Slackで雑談や質問、相談などのチャットをおこなっています。<br> 誰でも参加可能です。
       </mat-card-content>
 
       <mat-card-actions>
@@ -35,9 +32,21 @@
     </mat-card>
 
     <mat-card>
-      <mat-card-title>
-        Check our events!
-      </mat-card-title>
+      <img mat-card-image src="/assets/image/spectrum_logo.png" alt="spectrum">
+
+      <mat-card-content>
+        Spectrumではスレッド形式で質問や議論をおこなっています。<br> 誰でも参加可能です。
+      </mat-card-content>
+
+      <mat-card-actions>
+        <a mat-button color="primary" href="https://spectrum.chat/ng-japan/" target="_blank">
+          Spectrumに参加する
+        </a>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card>
+      <img mat-card-image src="/assets/image/connpass_logo.png" alt="connpass">
 
       <mat-card-content>
         Angular日本ユーザー会が開催するイベントを確認しましょう！
@@ -45,15 +54,29 @@
 
       <mat-card-actions>
         <a mat-button color="primary" href="https://ngjapan.connpass.com/" target="_blank">
-          Connpassを開く
+          開く
         </a>
       </mat-card-actions>
     </mat-card>
 
+
     <mat-card>
-      <mat-card-title>
-        Angular Japan Communities
-      </mat-card-title>
+      <img mat-card-image src="/assets/image/angular_jp_image.png" alt="Angular日本語ドキュメンテーション">
+
+      <mat-card-content>
+        公式ドキュメンテーションの日本語化をおこなっています。
+      </mat-card-content>
+
+      <mat-card-actions>
+        <a mat-button color="primary" href="https://angular.jp/" target="_blank">
+          開く
+        </a>
+      </mat-card-actions>
+    </mat-card>
+
+
+    <mat-card>
+      <img mat-card-image src="/assets/image/angular_japan_communities_image.png" alt="Angular Japan Communities">
 
       <mat-card-content>
         日本各地のAngularコミュニティを見つけましょう！
