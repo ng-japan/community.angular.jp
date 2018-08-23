@@ -8,7 +8,7 @@ export class LocalCommunityService {
   constructor(private store: Store<State>, private localCommunityRepository: LocalCommunityRepository) {}
 
   async loadAll() {
-    const communities = await this.localCommunityRepository.getAll();
+    const communities = await this.localCommunityRepository.getAll().toPromise();
 
     this.store.patch(state => ({
       ...state,

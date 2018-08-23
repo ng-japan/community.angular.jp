@@ -6,7 +6,7 @@ import { LocalCommunity } from './../core/model';
 export class LocalCommunityRepository {
   constructor(private http: HttpClient) {}
 
-  async getAll() {
-    return await this.http.get<LocalCommunity[]>('/assets/data/communities.json').toPromise();
+  getAll() {
+    return this.http.get<LocalCommunity[]>('/assets/data/communities.json');
   }
 }
