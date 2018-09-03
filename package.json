@@ -24,6 +24,7 @@
     "core-js": "^2.5.4",
     "lit-html": "^0.10.2",
     "rxjs": "^6.0.0",
+    "web-animations-js": "^2.3.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
