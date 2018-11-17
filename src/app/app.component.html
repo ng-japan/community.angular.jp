@@ -1,24 +1,12 @@
 <grid-layout class="root" [rows]="['auto', '1fr', 'auto']">
+  <mat-toolbar color="primary"> <a class="title" routerLink="/">Angular Japan User Group</a> </mat-toolbar>
 
-  <mat-toolbar color="primary">
-    <a class="title" routerLink="/">Angular Japan User Group</a>
-  </mat-toolbar>
-
-  <main>
-
-    <router-outlet></router-outlet>
-
-  </main>
-
+  <main><router-outlet></router-outlet></main>
 
   <grid-layout class="footer mat-caption" [rows]="['auto', 'auto']" [justifyItems]="'center'">
-    <div class="copyright">
-      &copy; Angular Japan User Group
-    </div>
+    <div class="copyright">&copy; Angular Japan User Group</div>
     <a class="contribute" href="https://github.com/ng-japan/community.angular.jp" target="_blank" rel="noopener">
       GitHub
     </a>
   </grid-layout>
-
-
 </grid-layout>

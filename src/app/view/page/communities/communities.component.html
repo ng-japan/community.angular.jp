@@ -1,25 +1,15 @@
 <grid-layout class="root" [columns]="['auto', '1fr']">
-
   <grid-layout class="sidebar" [rows]="['auto', '1fr', 'auto']" [justifyContent]="'center'">
-
-    <div class="title">
-      <img src="/assets/title.svg" alt="Angular Japan Communities" (click)="resetMap()">
-    </div>
+    <div class="title"><img src="/assets/title.svg" alt="Angular Japan Communities" (click)="resetMap()" /></div>
 
     <mat-list>
-      <mat-list-item *ngFor="let community of localCommunities$ | async">
-        <div matLine>
-          {{community.name}}
-        </div>
-        <button mat-icon-button (click)="selectCommunity(community)">
-          <mat-icon>place</mat-icon>
-        </button>
-        <div matLine>{{community.city}}</div>
+      <mat-list-item *ngFor="let community of (localCommunities$ | async)">
+        <div matLine>{{ community.name }}</div>
+        <button mat-icon-button (click)="selectCommunity(community)"><mat-icon>place</mat-icon></button>
+        <div matLine>{{ community.city }}</div>
       </mat-list-item>
     </mat-list>
-
   </grid-layout>
 
   <div #mapContainer></div>
-
 </grid-layout>
