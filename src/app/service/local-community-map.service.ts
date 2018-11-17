@@ -21,15 +21,19 @@ export class LocalCommunityMapService {
     const initialMapOptions = this.store.value.map.mapOptions;
     this.mapRef = createMap(containerElement, initialMapOptions);
 
-    this.store.select(state => state.map.mapOptions).subscribe(mapOptions => {
-      if (this.mapRef) {
-        this.mapRef.setOptions(mapOptions);
-      }
-    });
+    this.store
+      .select(state => state.map.mapOptions)
+      .subscribe(mapOptions => {
+        if (this.mapRef) {
+          this.mapRef.setOptions(mapOptions);
+        }
+      });
 
-    this.store.select(state => state.localCommunities.items).subscribe(communities => {
-      this.resetMarkers(communities);
-    });
+    this.store
+      .select(state => state.localCommunities.items)
+      .subscribe(communities => {
+        this.resetMarkers(communities);
+      });
   }
 
   resetMapOptions() {
