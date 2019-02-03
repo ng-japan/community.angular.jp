@@ -5,7 +5,8 @@
   "scripts": {
     "build": "ng build app --prod",
     "format": "prettier --write 'src/**/*.{ts,scss,html}'",
-    "test": "ng test --no-watch"
+    "test": "ng test --no-watch",
+    "postinstall": "opencollective-postinstall"
   },
   "dependencies": {
     "@angular/animations": "^7.0.4",
@@ -23,9 +24,11 @@
     "@lacolaco/reactive-store": "^2.0.1",
     "core-js": "^2.5.4",
     "lit-html": "^0.10.2",
+    "opencollective-postinstall": "^2.0.1",
     "rxjs": "^6.3.3",
     "web-animations-js": "^2.3.1",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "opencollective": "^1.0.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
@@ -51,5 +54,9 @@
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~3.1.6"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/angular-japan-user-group"
   }
 }
