@@ -14,7 +14,7 @@ import { LocalCommunityService } from '../../../service/local-community.service'
 export class CommunitiesPageComponent implements OnInit, AfterViewInit {
   localCommunities$ = this.store.select(state => state.localCommunities.items);
 
-  @ViewChild('mapContainer')
+  @ViewChild('mapContainer', { static: true })
   mapContainer!: ElementRef;
 
   constructor(
