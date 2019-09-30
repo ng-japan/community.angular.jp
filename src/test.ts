@@ -6,9 +6,6 @@ import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@ang
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { google } from './app/util/testing/google-maps-mock';
-
-(window as any).google = google;
 
 declare const require: any;
 

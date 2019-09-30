@@ -871,16 +871,6 @@
   dependencies:
     tslib "^1.7.1"
 
-"@lacolaco/ngx-store@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@lacolaco/ngx-store/-/ngx-store-4.1.0.tgz#3c2291d4f67c6266e1656205d07cf3e9788e4842"
-  dependencies:
-    tslib "^1.7.1"
-
-"@lacolaco/reactive-store@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@lacolaco/reactive-store/-/reactive-store-2.0.1.tgz#88326792f294e1360945fb6a471fc5d3c42d59fa"
-
 "@ngtools/webpack@8.3.6":
   version "8.3.6"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.3.6.tgz#780819b08088d665af937041de57c90e917a0da6"
@@ -4658,10 +4648,6 @@ lie@~3.1.0:
   resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
   dependencies:
     immediate "~3.0.5"
-
-lit-html@^0.10.2:
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.10.2.tgz#53c846afcf91bb1e6623179ef22e327ab8ac0e0e"
 
 loader-runner@^2.4.0:
   version "2.4.0"
