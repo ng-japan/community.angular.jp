@@ -1,0 +1,25 @@
+/**
+* Generated theme by Material Theme Generator
+* https://material-theme-generator.travetto.io
+*/
+
+@import '~@angular/material/theming';
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+
+$theme-primary: mat-palette($mat-indigo);
+$theme-accent: mat-palette($mat-red, 800);
+
+$theme: mat-light-theme($theme-primary, $theme-accent);
+$altTheme: mat-dark-theme($theme-primary, $theme-accent);
+
+@include mat-core();
+
+// Theme Init
+@include angular-material-theme($theme);
+
+.theme-alternate {
+  @include angular-material-theme($altTheme);
+}
+
+// Specific component overrides, pieces that are not in line with the general theming

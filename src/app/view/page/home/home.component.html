@@ -1,108 +1,71 @@
-<grid-layout class="root" [rows]="['auto', '1fr']" [justifyItems]="'center'">
-  <grid-layout class="hero" [rows]="['auto', 'auto']" [justifyItems]="'center'">
-    <div class="mat-title">Angular日本ユーザー会へようこそ！</div>
-  </grid-layout>
+<div class="root">
+  <section class="section-hero">
+    <img src="/assets/image/ng-japan.svg" height="96" alt="ng-japan" />
 
-  <div class="nav">
-    <mat-card>
-      <img mat-card-image src="/assets/image/ng-japan.svg" alt="ng-japan" />
+    <div>
+      <div class="mat-title">Angular日本ユーザー会へようこそ！</div>
 
-      <mat-card-content>
-        <div>
-          <strong>Angular日本ユーザー会</strong
-          >は日本のAngular開発者のためのコミュニティです。<br />イベントの開催やドキュメントの翻訳などをおこなっています。
-        </div>
-      </mat-card-content>
-    </mat-card>
+      <div class="mat-body-1">
+        Angular日本ユーザー会は日本のAngular開発者によるユーザーコミュニティです。<br />
+        ナレッジの共有やイベントの開催、ドキュメントの翻訳などをおこなっています。
+      </div>
+    </div>
+  </section>
 
-    <mat-card>
-      <mat-card-content>
-        <mat-card-subtitle> リンク集 </mat-card-subtitle>
+  <section class="section-welcome">
+    <div class="mat-body-1">
+      ユーザー会にはどなたでも参加できます。Angularをすでにお使いの方も、これから始めようと思っている方も歓迎します。<br />
+      コミュニティの運営方針については<a [routerLink]="'/policy'">コミュニティポリシー</a>をご確認ください。
+    </div>
+  </section>
 
-        <mat-nav-list>
-          <!-- Links -->
-          <mat-list-item>
-            <mat-icon mat-list-icon>open_in_new</mat-icon>
-            <a class="mat-body-1" href="https://medium.com/angular-japan-user-group" target="_blank" rel="noopener">
-              公式ブログ
-            </a>
-          </mat-list-item>
+  <section class="section-resources">
+    <div class="resource mat-elevation-z3">
+      <div class="resource-title mat-subheading-2">
+        <mat-icon>people</mat-icon>
+        コミュニティに参加する
+      </div>
+      <div class="mat-body-1">
+        <p>
+          まずはコミュニティのSlackへご参加ください！<br />
+          <a href="http://slack-invite.ngjapan.org/" target="_blank" rel="noopener"> Slackに参加する </a>
+        </p>
+        <p>
+          雑談以外の技術的な議論やトラブルシューティングなどに使っているオンラインフォーラムにもぜひご参加ください！<br />
+          <a href="https://angular-japan.discourse.group/" target="_blank" rel="noopener"> フォーラムに参加する </a>
+        </p>
+        <p>
+          公式Twitterアカウントでは、イベント情報やAngularの情報など不定期に投稿しています。ぜひフォローしてください！<br />
+          <a href="https://twitter.com/ng_japan" target="_blank" rel="noopener"> @ng_japan をフォローする</a>
+        </p>
+        <p>
+          ユーザー会が主催するイベントは基本的にconnpassで公開されます。ぜひグループに参加してイベント情報をGETしてください。<br />
+          <a href="https://ngjapan.connpass.com/" target="_blank" rel="noopener"> connpassグループに参加する </a>
+        </p>
+      </div>
+    </div>
 
-          <mat-list-item>
-            <mat-icon mat-list-icon>open_in_new</mat-icon>
-            <a class="mat-body-1" href="https://ngjapan.connpass.com/" target="_blank" rel="noopener"> イベント情報 </a>
-          </mat-list-item>
+    <div class="resource mat-elevation-z3">
+      <div class="resource-title mat-subheading-2">
+        <mat-icon>book</mat-icon>
+        日本語版Angularドキュメント
+      </div>
+      <div class="mat-body-1">
+        <a href="https://angular.jp/" target="_blank" rel="noopener"> angular.jp </a>
+        は日本語版のAngular公式ドキュメントです。<br />
+        翻訳に協力してくれるコントリビューターを募集しています！
+      </div>
+    </div>
 
-          <mat-list-item>
-            <mat-icon mat-list-icon>open_in_new</mat-icon>
-            <a class="mat-body-1" href="https://twitter.com/ng_japan" target="_blank" rel="noopener">
-              Twitter @ng_japan
-            </a>
-          </mat-list-item>
-        </mat-nav-list>
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card>
-      <img mat-card-image src="/assets/image/ng_japan_2019.png" alt="ng-japan 2019" />
-
-      <mat-card-content>
-        <strong>ng-japan 2019</strong><br />
-        2019/07/13 Google Japanにて開催！
-      </mat-card-content>
-
-      <mat-card-actions>
-        <a mat-button color="primary" href="https://ngjapan.org/" target="_blank" rel="noopener"> 詳しく見る </a>
-      </mat-card-actions>
-    </mat-card>
-
-    <mat-card>
-      <img mat-card-image src="/assets/image/angular_jp_image.png" alt="Angular日本語ドキュメンテーション" />
-
-      <mat-card-content>
-        公式ドキュメントの日本語翻訳をおこなっています。<br />
-        コントリビューター募集中！
-      </mat-card-content>
-
-      <mat-card-actions>
-        <a mat-button color="primary" href="https://angular.jp/" target="_blank" rel="noopener"> angular.jpを開く </a>
-      </mat-card-actions>
-    </mat-card>
-
-    <mat-card>
-      <img mat-card-image src="/assets/image/whouse_image.png" alt="Who use Angular in Japan" />
-
-      <mat-card-content> 日本国内でAngularを利用している企業・組織をリストアップしています。 </mat-card-content>
-
-      <mat-card-actions>
-        <a mat-button color="primary" href="https://whouse.angular.jp/" target="_blank" rel="noopener">
-          whouse.angular.jpを開く
-        </a>
-      </mat-card-actions>
-    </mat-card>
-
-    <mat-card>
-      <img mat-card-image src="/assets/image/slack_logo.svg" alt="slack" />
-
-      <mat-card-content> チャット形式の交流の場にSlackを使っています。 </mat-card-content>
-
-      <mat-card-actions>
-        <a mat-button color="primary" href="http://slack-invite.ngjapan.org/" target="_blank" rel="noopener">
-          Slackに参加する
-        </a>
-      </mat-card-actions>
-    </mat-card>
-
-    <mat-card>
-      <img mat-card-image src="/assets/image/discourse_logo.png" alt="discourse" />
-
-      <mat-card-content> 議論やQ&A、トラブルシューティングの場にDiscourseを使っています。 </mat-card-content>
-
-      <mat-card-actions>
-        <a mat-button color="primary" href="https://angular-japan.discourse.group/" target="_blank" rel="noopener">
-          Discourseに参加する
-        </a>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-</grid-layout>
+    <div class="resource mat-elevation-z3">
+      <div class="resource-title mat-subheading-2">
+        <mat-icon>business</mat-icon>
+        Angular利用企業リスト
+      </div>
+      <div class="mat-body-1">
+        <a href="https://whouse.angular.jp/" target="_blank" rel="noopener"> whouse.angular.jp </a>
+        では日本国内でAngularを利用している企業・組織をリストアップしています。<br />
+      </div>
+    </div>
+  </section>
+</div>

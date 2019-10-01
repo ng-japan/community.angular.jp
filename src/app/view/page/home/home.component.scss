@@ -1,57 +1,48 @@
 .root {
   height: 100%;
-}
 
-.content {
-  padding: 32px;
-}
-
-.hero {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.nav {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 1200px;
+  flex-direction: column;
 
   padding: 0 16px;
-  align-items: flex-start;
-  justify-content: center;
-  align-content: flex-start;
-}
 
-.logo {
-  img {
-    width: 128px;
-    height: 128px;
+  padding-top: 24px;
+
+  > :not(:last-child) {
+    margin-bottom: 24px;
   }
 }
 
-mat-card {
-  border-radius: 5px;
-  margin: 8px;
-  width: 200px;
-
-  @media (max-width: 512px) {
-    width: 90%;
-  }
-
-  [mat-card-image] {
-    object-fit: contain;
-    object-position: center;
-    height: 160px;
-  }
-
-  mat-card-content {
-    min-height: 64px;
-  }
+.section-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.mat-list-item {
-  .mat-list-icon {
-    margin-right: 8px;
+.section-welcome {
+}
+
+.section-resources {
+  > :not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  .resource {
+    border-radius: 8px;
+    padding: 16px;
+
+    .resource-title {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+
+      mat-icon {
+        margin-right: 4px;
+      }
+    }
+
+    .resource-link {
+      margin-top: 16px;
+    }
   }
 }
