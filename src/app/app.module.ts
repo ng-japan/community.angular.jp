@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './view/page/home/home.module';
+import { PolicyModule } from './view/page/policy/policy.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,8 +21,10 @@ import { HomeModule } from './view/page/home/home.module';
     MatButtonModule,
     MatIconModule,
     MatListModule,
-    HomeModule,
+
     AppRoutingModule,
+    HomeModule,
+    PolicyModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
