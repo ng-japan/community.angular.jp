@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PolicyPageComponent } from './policy.component';
+import { LocalPageComponent } from './local.component';
 
 @NgModule({
-  declarations: [PolicyPageComponent],
+  declarations: [LocalPageComponent],
   imports: [CommonModule],
 })
-export class PolicyModule {}
+export class LocalModule {}

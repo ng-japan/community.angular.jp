@@ -1,12 +1,8 @@
-.root {
+:host {
   height: 100%;
 
   display: flex;
   flex-direction: column;
-
-  padding: 0 16px;
-
-  padding-top: 24px;
 
   > :not(:last-child) {
     margin-bottom: 24px;

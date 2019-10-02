@@ -1,0 +1,23 @@
+<div class="title mat-headline">ローカルコミュニティ</div>
+
+<div class="description mat-body-1">
+  <p>
+    日本各地でイベントを開催しているローカルコミュニティがあります。<br />
+    ぜひあなたの街の近くのコミュニティイベントに参加してみてください！
+  </p>
+  <p>もしあなたのコミュニティを追加したい場合はSlackやフォーラムでいつでも教えてください！</p>
+</div>
+
+<div class="community-list">
+  <ul>
+    <li *ngFor="let item of localCommunityList" class="community-list-item mat-elevation-z3">
+      <div class="community-name">
+        <span class="mat-title">{{ item.name }}</span> <br />
+        <span class="mat-body-2">@ {{ item.cityName }}</span>
+      </div>
+
+      <div><img height="96" src="{{item.logoURL || '/assets/ng-japan.svg'}}" alt="image of {{ item.name }}" /></div>
+      <a href="{{item.linkURL}}" target="_blank" rel="noopener">Link</a>
+    </li>
+  </ul>
+</div>

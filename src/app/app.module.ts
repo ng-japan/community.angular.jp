@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './view/page/home/home.module';
 import { PolicyModule } from './view/page/policy/policy.module';
+import { LocalModule } from './view/page/local/local.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { PolicyModule } from './view/page/policy/policy.module';
     AppRoutingModule,
     HomeModule,
     PolicyModule,
+    LocalModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
