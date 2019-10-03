@@ -865,12 +865,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@lacolaco/ngx-grid-layout@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@lacolaco/ngx-grid-layout/-/ngx-grid-layout-0.3.0.tgz#9229ec8a893947b7dc2d7f122a13574a50221e50"
-  dependencies:
-    tslib "^1.7.1"
-
 "@ngtools/webpack@8.3.6":
   version "8.3.6"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.3.6.tgz#780819b08088d665af937041de57c90e917a0da6"
@@ -908,10 +902,6 @@
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
   integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
-
-"@types/faker@^4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@types/faker/-/faker-4.1.3.tgz#544398268b37248300dc428316daa6a7521bbd19"
 
 "@types/glob@^7.1.1":
   version "7.1.1"
@@ -3175,10 +3165,6 @@ extsprintf@1.3.0:
 extsprintf@^1.2.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
-
-faker@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/faker/-/faker-4.1.0.tgz#1e45bbbecc6774b3c195fad2835109c6d748cc3f"
 
 fast-deep-equal@^1.0.0:
   version "1.1.0"
