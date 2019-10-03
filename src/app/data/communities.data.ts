@@ -20,7 +20,7 @@ export const localCommunities: LocalCommunity[] = [
   {
     name: 'ng-kyoto',
     cityName: 'Kyoto',
-    linkURL: 'https://ng-kyoto.github.io',
+    linkURL: 'https://ng-kyoto.angular.jp',
     logoURL: '/assets/ng-kyoto.png',
   },
   {
