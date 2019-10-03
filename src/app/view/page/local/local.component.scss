@@ -12,23 +12,17 @@
 .community-list {
   ul {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0;
-    margin-bottom: -16px;
-    margin-right: -16px;
+    flex-direction: column;
+    padding: 0 16px;
+    margin: 0;
     li {
       flex: 1;
-      display: block;
-      list-style: none;
-      margin-bottom: 16px;
-      margin-right: 16px;
+      margin-bottom: 8px;
     }
   }
 
   .community-list-item {
     border-radius: 8px;
-    padding: 16px;
 
     .community-name {
     }

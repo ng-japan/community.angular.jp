@@ -10,14 +10,12 @@
 
 <div class="community-list">
   <ul>
-    <li *ngFor="let item of localCommunityList" class="community-list-item mat-elevation-z3">
+    <li *ngFor="let item of localCommunityList" class="community-list-item">
       <div class="community-name">
-        <span class="mat-title">{{ item.name }}</span> <br />
-        <span class="mat-body-2">@ {{ item.cityName }}</span>
+        <a class="mat-title" href="{{item.linkURL}}" target="_blank" rel="noopener">
+          {{ item.name }} @ {{ item.cityName }}
+        </a>
       </div>
-
-      <div><img height="96" src="{{item.logoURL || '/assets/ng-japan.svg'}}" alt="image of {{ item.name }}" /></div>
-      <a href="{{item.linkURL}}" target="_blank" rel="noopener">Link</a>
     </li>
   </ul>
 </div>
