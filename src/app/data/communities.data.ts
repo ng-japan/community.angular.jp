@@ -2,20 +2,19 @@ import { LocalCommunity } from '../model/local-community';
 
 export const localCommunities: LocalCommunity[] = [
   {
-    name: 'ng-japan',
+    name: 'ng-sake',
     cityName: 'Tokyo',
-    linkURL: 'https://ngjapan.connpass.com/',
-    logoURL: '/assets/ng-japan.svg',
-  },
-  {
-    name: 'ng-saitama',
-    cityName: 'Saitama',
-    linkURL: 'https://ng-saitama.connpass.com/',
+    linkURL: 'https://ng-sake.connpass.com/',
   },
   {
     name: 'ng-gunma',
     cityName: 'Gunma',
     linkURL: 'https://ng-gunma.connpass.com/',
+  },
+  {
+    name: 'ng-saitama',
+    cityName: 'Saitama',
+    linkURL: 'https://ng-saitama.connpass.com/',
   },
   {
     name: 'ng-kyoto',
