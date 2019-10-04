@@ -1,8 +1,9 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { MatSidenav } from '@angular/material/sidenav';
+import { DocumentTitleChanger } from './service/document-title-changer';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private readonly onDestroy$ = new Subject();
 
-  constructor(private readonly breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private readonly breakpointObserver: BreakpointObserver,
+    private readonly documentTitleChanger: DocumentTitleChanger,
+  ) {}
 
   ngOnInit() {
     this.breakpointObserver
@@ -33,6 +37,8 @@ export class AppComponent implements OnInit, OnDestroy {
           this.sideNav.close();
         }
       });
+
+    this.documentTitleChanger.connect(this.onDestroy$);
   }
 
   ngOnDestroy() {

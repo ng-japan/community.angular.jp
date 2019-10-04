@@ -10,18 +10,28 @@ export const routes = [
     path: '',
     pathMatch: 'full',
     component: HomePageComponent,
+    data: {},
   },
   {
     path: 'policy',
     component: PolicyPageComponent,
+    data: {
+      documentTitle: 'コミュニティポリシー',
+    },
   },
   {
     path: 'local',
     component: LocalPageComponent,
+    data: {
+      documentTitle: 'ローカルコミュニティ',
+    },
   },
   {
     path: 'about',
     component: AboutPageComponent,
+    data: {
+      documentTitle: 'About',
+    },
   },
   {
     path: '**',
