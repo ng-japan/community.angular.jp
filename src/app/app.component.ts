@@ -45,4 +45,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.onDestroy$.next();
     this.onDestroy$.complete();
   }
+
+  onNavClick() {
+    if (this.sideNav.mode === 'over') {
+      this.sideNav.close();
+    }
+  }
 }

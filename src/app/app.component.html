@@ -8,7 +8,7 @@
 
   <mat-sidenav-container class="main">
     <mat-sidenav #sideNav [mode]="isMobile ? 'over' : 'side'" [fixedInViewport]="isMobile">
-      <mat-nav-list class="links">
+      <mat-nav-list class="links" (click)="onNavClick()">
         <a mat-list-item [routerLink]="'/'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
           トップ
         </a>
