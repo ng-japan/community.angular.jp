@@ -1,5 +1,5 @@
 export interface Member {
   name: string;
-  linkURL: string;
+  twitterScreenName: string;
   role?: string;
 }

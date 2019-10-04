@@ -5,12 +5,15 @@
   コミュニティポリシーに賛同いただき、コアメンバーとしてコミュニティを発展させることに興味があれば、いつでもわたしたちに教えてください！<br />
 </div>
 
-<div class="organizers">
+<div class="members">
   <ul>
     <li *ngFor="let item of members">
-      <a href="{{item.linkURL}}" target="_blank" rel="noopener">
-        {{ item.name }} <span *ngIf="item.role">&nbsp;({{ item.role }})</span>
-      </a>
+      <div class="member-list-item">
+        <img src="https://avatars.io/twitter/{{item.twitterScreenName}}" height="64" width="64" />
+        <a href="https://twitter.com/{{item.twitterScreenName}}" target="_blank" rel="noopener">
+          {{ item.name }} <span *ngIf="item.role">&nbsp;({{ item.role }})</span>
+        </a>
+      </div>
     </li>
   </ul>
 </div>
