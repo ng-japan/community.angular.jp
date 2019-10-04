@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { HomePageComponent } from './view/page/home/home.component';
 import { PolicyPageComponent } from './view/page/policy/policy.component';
 import { LocalPageComponent } from './view/page/local/local.component';
+import { AboutPageComponent } from './view/page/about/about.component';
 
 export const routes = [
   {
@@ -17,6 +18,10 @@ export const routes = [
   {
     path: 'local',
     component: LocalPageComponent,
+  },
+  {
+    path: 'about',
+    component: AboutPageComponent,
   },
   {
     path: '**',

@@ -1,0 +1,10 @@
+:host {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  > :not(:last-child) {
+    margin-bottom: 24px;
+  }
+}

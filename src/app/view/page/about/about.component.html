@@ -1,0 +1,16 @@
+<div class="title mat-headline">コアメンバー</div>
+
+<div class="description mat-body-1">
+  Angular日本ユーザー会を運営しているコアメンバーを紹介します。<br />
+  コミュニティポリシーに賛同いただき、コアメンバーとしてコミュニティを発展させることに興味があれば、いつでもわたしたちに教えてください！<br />
+</div>
+
+<div class="organizers">
+  <ul>
+    <li *ngFor="let item of members">
+      <a href="{{item.linkURL}}" target="_blank" rel="noopener">
+        {{ item.name }} <span *ngIf="item.role">&nbsp;({{ item.role }})</span>
+      </a>
+    </li>
+  </ul>
+</div>

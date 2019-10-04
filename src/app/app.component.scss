@@ -9,6 +9,12 @@
   }
 }
 
+.links {
+  .active {
+    background-color: #eee;
+  }
+}
+
 .content-root {
   display: flex;
   flex-direction: column;

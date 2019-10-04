@@ -8,12 +8,16 @@
 
   <mat-sidenav-container class="main">
     <mat-sidenav #sideNav [mode]="isMobile ? 'over' : 'side'" [fixedInViewport]="isMobile">
-      <mat-nav-list>
-        <a mat-list-item [routerLink]="'/'">トップ</a>
+      <mat-nav-list class="links">
+        <a mat-list-item [routerLink]="'/'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          トップ
+        </a>
 
-        <a mat-list-item [routerLink]="'/policy'">コミュニティポリシー</a>
+        <a mat-list-item [routerLink]="'/policy'" [routerLinkActive]="'active'">コミュニティポリシー</a>
 
-        <a mat-list-item [routerLink]="'/local'">ローカルコミュニティ</a>
+        <a mat-list-item [routerLink]="'/local'" [routerLinkActive]="'active'">ローカルコミュニティ</a>
+
+        <a mat-list-item [routerLink]="'/about'" [routerLinkActive]="'active'">About</a>
 
         <a mat-list-item href="https://ngjapan.org/" target="_blank" rel="noopener">
           ngjapan.org

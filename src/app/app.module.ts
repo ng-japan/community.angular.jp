@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './view/page/home/home.module';
 import { PolicyModule } from './view/page/policy/policy.module';
 import { LocalModule } from './view/page/local/local.module';
+import { AboutUsModule } from './view/page/about/about.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { LocalModule } from './view/page/local/local.module';
     HomeModule,
     PolicyModule,
     LocalModule,
+    AboutUsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
