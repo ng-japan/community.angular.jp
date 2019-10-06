@@ -2,25 +2,15 @@ import { LocalCommunity } from '../model/local-community';
 
 export const localCommunities: LocalCommunity[] = [
   {
-    name: 'ng-sake',
-    cityName: 'Tokyo',
-    linkURL: 'https://ng-sake.connpass.com/',
+    name: 'ng-fukuoka',
+    cityName: 'Fukuoka',
+    linkURL: 'https://ng-fukuoka.github.io/',
+    logoURL: '/assets/ng-fukuoka.svg',
   },
   {
     name: 'ng-gunma',
     cityName: 'Gunma',
     linkURL: 'https://ng-gunma.connpass.com/',
-  },
-  {
-    name: 'ng-saitama',
-    cityName: 'Saitama',
-    linkURL: 'https://ng-saitama.connpass.com/',
-  },
-  {
-    name: 'ng-kyoto',
-    cityName: 'Kyoto',
-    linkURL: 'https://ng-kyoto.angular.jp',
-    logoURL: '/assets/ng-kyoto.png',
   },
   {
     name: 'ng-kobe',
@@ -29,9 +19,19 @@ export const localCommunities: LocalCommunity[] = [
     logoURL: '/assets/ng-kobe.png',
   },
   {
-    name: 'ng-fukuoka',
-    cityName: 'Fukuoka',
-    linkURL: 'https://ng-fukuoka.github.io/',
-    logoURL: '/assets/ng-fukuoka.svg',
+    name: 'ng-kyoto',
+    cityName: 'Kyoto',
+    linkURL: 'https://ng-kyoto.angular.jp',
+    logoURL: '/assets/ng-kyoto.png',
+  },
+  {
+    name: 'ng-saitama',
+    cityName: 'Saitama',
+    linkURL: 'https://ng-saitama.connpass.com/',
+  },
+  {
+    name: 'ng-sake',
+    cityName: 'Tokyo',
+    linkURL: 'https://ng-sake.connpass.com/',
   },
 ];
