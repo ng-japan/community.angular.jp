@@ -1,12 +1,50 @@
-<grid-layout class="root" [rows]="['auto', '1fr', 'auto']">
-  <mat-toolbar color="primary"> <a class="title" routerLink="/">Angular Japan User Group</a> </mat-toolbar>
+<div class="root">
+  <header class="header">
+    <mat-toolbar color="primary">
+      <button *ngIf="isMobile" mat-icon-button (click)="sideNav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1>Angular Japan User Group</h1>
+    </mat-toolbar>
+  </header>
 
-  <main><router-outlet></router-outlet></main>
+  <mat-sidenav-container class="main">
+    <mat-sidenav #sideNav [mode]="isMobile ? 'over' : 'side'" [fixedInViewport]="isMobile">
+      <mat-nav-list class="links" (click)="onNavClick()">
+        <a mat-list-item [routerLink]="'/'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          トップ
+        </a>
 
-  <grid-layout class="footer mat-caption" [rows]="['auto', 'auto']" [justifyItems]="'center'">
-    <div class="copyright">&copy; Angular Japan User Group</div>
-    <a class="contribute" href="https://github.com/ng-japan/community.angular.jp" target="_blank" rel="noopener">
-      GitHub
-    </a>
-  </grid-layout>
-</grid-layout>
+        <a mat-list-item [routerLink]="'/policy'" [routerLinkActive]="'active'">コミュニティポリシー</a>
+
+        <a mat-list-item [routerLink]="'/local'" [routerLinkActive]="'active'">ローカルコミュニティ</a>
+
+        <a mat-list-item [routerLink]="'/about'" [routerLinkActive]="'active'">About</a>
+
+        <a mat-list-item href="https://ngjapan.org/" target="_blank" rel="noopener">
+          ngjapan.org
+          <mat-icon mat-list-icon>open_in_new</mat-icon>
+        </a>
+
+        <a mat-list-item href="https://medium.com/angular-japan-user-group" target="_blank" rel="noopener">
+          公式ブログ
+          <mat-icon mat-list-icon>open_in_new</mat-icon>
+        </a>
+
+        <a mat-list-item href="https://twitter.com/ng_japan" target="_blank" rel="noopener">
+          Twitter
+          <mat-icon mat-list-icon>open_in_new</mat-icon>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content-root">
+      <main class="content-main"><router-outlet></router-outlet></main>
+
+      <footer class="content-footer mat-caption">
+        <div class="copyright">&copy; Angular Japan User Group</div>
+        <a class="contribute" href="https://github.com/ng-japan/community.angular.jp" target="_blank" rel="noopener">
+          GitHub
+        </a>
+      </footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

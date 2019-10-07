@@ -1,0 +1,17 @@
+:host {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  > :not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+
+.goals {
+  .goal-line {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}

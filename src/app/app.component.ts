@@ -1,35 +1,54 @@
-import { Platform } from '@angular/cdk/platform';
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Subject } from 'rxjs';
+import { map, takeUntil } from 'rxjs/operators';
+import { MatSidenav } from '@angular/material/sidenav';
+import { DocumentTitleChanger } from './service/document-title-changer';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+  isMobile = false;
+
+  @ViewChild(MatSidenav, { static: true }) sideNav!: MatSidenav;
+
+  private readonly onDestroy$ = new Subject();
+
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private title: Title,
-    private platform: Platform,
+    private readonly breakpointObserver: BreakpointObserver,
+    private readonly documentTitleChanger: DocumentTitleChanger,
   ) {}
 
   ngOnInit() {
-    this.router.events.subscribe(e => {
-      if (e instanceof NavigationEnd) {
-        const snapshot = this.route.snapshot.firstChild;
-        if (snapshot && 'title' in snapshot.data) {
-          this.title.setTitle(`${snapshot.data.title} | Angular日本ユーザー会`);
+    this.breakpointObserver
+      .observe('(max-width: 600px)')
+      .pipe(
+        takeUntil(this.onDestroy$),
+        map(state => state.matches),
+      )
+      .subscribe(isMobile => {
+        this.isMobile = isMobile;
+        if (!isMobile) {
+          this.sideNav.open();
         } else {
-          this.title.setTitle(`Angular日本ユーザー会へようこそ！`);
+          this.sideNav.close();
         }
+      });
 
-        if (this.platform.isBrowser) {
-          (window as any).gtag('config', 'UA-59853299-4', { page_path: e.url });
-        }
-      }
-    });
+    this.documentTitleChanger.connect(this.onDestroy$);
+  }
+
+  ngOnDestroy() {
+    this.onDestroy$.next();
+    this.onDestroy$.complete();
+  }
+
+  onNavClick() {
+    if (this.sideNav.mode === 'over') {
+      this.sideNav.close();
+    }
   }
 }
