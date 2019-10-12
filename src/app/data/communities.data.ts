@@ -4,7 +4,7 @@ export const localCommunities: LocalCommunity[] = [
   {
     name: 'ng-fukuoka',
     cityName: 'Fukuoka',
-    linkURL: 'https://ng-fukuoka.github.io/',
+    linkURL: 'https://ng-fukuoka.angular.jp/',
     logoURL: '/assets/ng-fukuoka.svg',
   },
   {
