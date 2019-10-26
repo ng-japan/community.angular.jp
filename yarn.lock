@@ -120,12 +120,10 @@
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-9.0.0-next.14.tgz#9c967be04f7ed1691df48bf4e517172c7d226559"
   integrity sha512-5JDFoXcbS9kJWZTxsFatuYwbsCwBb1kAM8WkrCrANgRxJiJ6JDiOMCL9fFmFq8ihKft4QOpuvGoH6UMkAo3mAQ==
 
-"@angular/cdk@^9.0.0-next.0":
-  version "9.0.0-next.0"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-9.0.0-next.0.tgz#5c9878a322187340d1c4b016d627e0388b109727"
-  integrity sha512-tayIzu8VzLqiOOrrEg55RqzjtkRUeDBAYQgsXMFhPkeBPOq9YEcXcqbMGwtD47SoixsfoUOrNxzw0U1HBNBR+A==
-  dependencies:
-    tslib "^1.7.1"
+"@angular/cdk@^9.0.0-next.1":
+  version "9.0.0-next.1"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-9.0.0-next.1.tgz#ccca00a883854ef39de9afcb000e25a49f3ee2b6"
+  integrity sha512-dZmrBDSkecJ1EXPKfgUYSrcG3vi3HiyrCbVlWajb/4DehHmoSzKWkcfCPDOEg14VS5eqPMdBpLwUO6OFg5e9Yw==
   optionalDependencies:
     parse5 "^5.0.0"
 
@@ -196,12 +194,10 @@
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-9.0.0-next.14.tgz#8260e71e30d88ed792929668816f3c7e8d3071f8"
   integrity sha512-gz1h9SuytzZd1WfqzXLLu8BWqbVb1ccc4HOFiyUv5gcW77yK5r0JZlJ5NOTEnBXGkEjhUuyrUEc477fUPueIoQ==
 
-"@angular/material@^9.0.0-next.0":
-  version "9.0.0-next.0"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-9.0.0-next.0.tgz#40fc1c1fac05ddcad0f96a6de1f2059da263cb2f"
-  integrity sha512-syUoExp49HtKnW/1yQPS3OdAhCzfXxye0UoYA5sjoouT1YJk472zrEXuIHZ2PisWd1TWVJvNkTNtX/FnkOesPQ==
-  dependencies:
-    tslib "^1.7.1"
+"@angular/material@^9.0.0-next.1":
+  version "9.0.0-next.1"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-9.0.0-next.1.tgz#50d7296fac28835ee18555aa346f2dae02e5f811"
+  integrity sha512-ZS6J9Xh6R2bz2Snj8HpQ83OcoUhB/zaD08oI3bLLMQCr1UzYaeu6hOfXv7/HV9jG78QAVfTe1JEt1UMTThauqg==
 
 "@angular/platform-browser-dynamic@^9.0.0-next.14":
   version "9.0.0-next.14"
@@ -7631,7 +7627,7 @@ tslib@1.10.0, tslib@^1.10.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 
-tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 
