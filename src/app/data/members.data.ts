@@ -6,7 +6,7 @@ export const members: Member[] = [
   { name: 'きゃない', twitterScreenName: 'can_i_do_web' },
   { name: 'Fumio SAGAWA', twitterScreenName: 'albatrosary' },
   { name: 'teyosh', twitterScreenName: 'teyosh' },
-  { name: 'frontainer', twitterScreenName: 'sable_virt' },
+  { name: 'せーぶる', twitterScreenName: 'sable_virt' },
   { name: 'Yosuke Kurami', twitterScreenName: 'quramy' },
   { name: 'ちきさん', twitterScreenName: 'ovrmrw' },
   { name: 'Kazuyoshi Kawakami', twitterScreenName: 'kawakami0717' },
