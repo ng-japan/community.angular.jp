@@ -10,11 +10,11 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss",
+          "style": "scss",
           "changeDetection": "OnPush"
         },
         "@schematics/angular:module": {
-          "spec": false
+          "skipTests": true
         }
       },
       "architect": {
