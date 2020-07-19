@@ -5,7 +5,6 @@
   "scripts": {
     "build": "ng build app --prod",
     "format": "prettier --write 'src/**/*.{ts,scss,html}'",
-    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "test": "ng test --no-watch"
   },
   "dependencies": {
