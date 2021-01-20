@@ -32,7 +32,7 @@
     "@types/googlemaps": "3.30.11",
     "@types/jasmine": "3.6.2",
     "@types/jasminewd2": "2.0.8",
-    "@types/node": "12.11.7",
+    "@types/node": "12.19.15",
     "codelyzer": "6.0.1",
     "jasmine-core": "3.6.0",
     "jasmine-spec-reporter": "5.0.2",
