@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "ng-japan"
+  },
+  "targets": {
+    "ng-japan": {
+      "hosting": {
+        "app": [
+          "community"
+        ]
+      }
+    }
   }
 }
