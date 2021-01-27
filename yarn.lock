@@ -1478,10 +1478,10 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/googlemaps@3.30.11":
-  version "3.30.11"
-  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.30.11.tgz#9a1e0d63120136047be2a7fdbfbd2e7061a50ee6"
-  integrity sha512-/KxRVeLEUEoRyPp9bYNSv2FpuQUAEpTjEKAdcbYEbuFughA24j4Riy+ayAmQHKSZHjRrOt1s7wuksvhakIADPA==
+"@types/googlemaps@3.43.2":
+  version "3.43.2"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.43.2.tgz#87db9460337c935de6d78f359d8135b4bda0c1cf"
+  integrity sha512-qiu5rms7+bgLciKAXpRsxVB1P+Z6gbSxuO8tZfdyQV2k5e5L/7GjUI6Z69rMR+7YFmqU9vwOUglLQ6NJyP/K8g==
 
 "@types/jasmine@*":
   version "2.8.8"

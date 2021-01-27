@@ -29,7 +29,7 @@
     "@angular/cli": "11.0.5",
     "@angular/compiler-cli": "11.0.5",
     "@angular/language-service": "11.0.5",
-    "@types/googlemaps": "3.30.11",
+    "@types/googlemaps": "3.43.2",
     "@types/jasmine": "3.6.3",
     "@types/jasminewd2": "2.0.8",
     "@types/node": "12.11.7",
