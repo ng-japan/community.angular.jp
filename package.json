@@ -20,7 +20,7 @@
     "@angular/router": "11.0.5",
     "core-js": "3.8.3",
     "rxjs": "6.5.3",
-    "tslib": "2.0.0",
+    "tslib": "2.1.0",
     "web-animations-js": "2.3.2",
     "zone.js": "0.10.3"
   },
