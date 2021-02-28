@@ -18,7 +18,7 @@
     "@angular/platform-browser": "11.1.0",
     "@angular/platform-browser-dynamic": "11.1.0",
     "@angular/router": "11.1.0",
-    "core-js": "3.8.3",
+    "core-js": "3.9.1",
     "rxjs": "6.6.3",
     "tslib": "2.1.0",
     "web-animations-js": "2.3.2",
