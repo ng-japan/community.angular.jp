@@ -1,5 +1,3 @@
 {
-  "extends": [
-    "config:base"
-  ]
+  "extends": ["config:base", "github>lacolaco/renovate-config:default", "github>lacolaco/renovate-config:ng-update"]
 }
