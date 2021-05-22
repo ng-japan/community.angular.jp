@@ -20,7 +20,7 @@ export class DocumentTitleChanger {
     this.router.events
       .pipe(
         takeUntil(disposer),
-        filter(event => event instanceof NavigationEnd),
+        filter((event) => event instanceof NavigationEnd),
       )
       .subscribe(() => {
         // tslint:disable-next-line: no-non-null-assertion

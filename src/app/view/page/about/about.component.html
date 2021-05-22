@@ -9,8 +9,8 @@
   <ul>
     <li *ngFor="let item of members">
       <div class="member-list-item">
-        <img src="https://unavatar.now.sh/twitter/{{item.twitterScreenName}}" height="64" width="64" />
-        <a href="https://twitter.com/{{item.twitterScreenName}}" target="_blank" rel="noopener">
+        <img src="https://unavatar.now.sh/twitter/{{ item.twitterScreenName }}" height="64" width="64" />
+        <a href="https://twitter.com/{{ item.twitterScreenName }}" target="_blank" rel="noopener">
           {{ item.name }} <span *ngIf="item.role">&nbsp;({{ item.role }})</span>
         </a>
       </div>
