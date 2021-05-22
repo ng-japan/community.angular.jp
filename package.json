@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "ng build app --prod",
+    "build": "ng build app",
     "format": "prettier --write 'src/**/*.{ts,scss,html}'",
+    "start": "ng serve app",
     "test": "ng test --no-watch"
   },
   "dependencies": {
