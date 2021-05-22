@@ -9,7 +9,6 @@
     "declaration": false,
     "module": "es2020",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "strict": true,
     "target": "es2015",
@@ -17,6 +16,7 @@
     "lib": ["es2017", "dom"]
   },
   "angularCompilerOptions": {
-    "enableIvy": true
+    "fullTemplateTypeCheck": true,
+    "strictTemplates": true
   }
 }

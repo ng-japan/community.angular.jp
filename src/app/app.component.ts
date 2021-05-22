@@ -27,9 +27,9 @@ export class AppComponent implements OnInit, OnDestroy {
       .observe('(max-width: 600px)')
       .pipe(
         takeUntil(this.onDestroy$),
-        map(state => state.matches),
+        map((state) => state.matches),
       )
-      .subscribe(isMobile => {
+      .subscribe((isMobile) => {
         this.isMobile = isMobile;
         if (!isMobile) {
           this.sideNav.open();
