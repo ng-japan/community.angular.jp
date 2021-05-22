@@ -23,7 +23,7 @@ export class DocumentTitleChanger {
         filter((event) => event instanceof NavigationEnd),
       )
       .subscribe(() => {
-        // tslint:disable-next-line: no-non-null-assertion
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const data = this.route.snapshot.root.firstChild!.data;
         if (typeof data !== 'undefined' && typeof data.documentTitle === 'string') {
           this.titleService.setTitle(`${data.documentTitle} | ${baseTitle}`);
