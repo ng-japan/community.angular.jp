@@ -10,7 +10,7 @@
       @apply text-3xl py-4;
     }
     > h2 {
-      @apply text-xl py-4 border-t-2;
+      @apply text-xl py-4 mt-4 border-t-2;
     }
     > ul {
       @apply list-disc list-inside;
@@ -20,7 +20,7 @@
       }
     }
     > p {
-      @apply py-4;
+      @apply py-1;
     }
   }
 }
