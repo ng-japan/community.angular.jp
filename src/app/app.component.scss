@@ -1,31 +1,3 @@
-.root {
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  .main {
-    flex: 1 0 auto;
-  }
-}
-
-.links {
-  .active {
-    background-color: #eee;
-  }
-}
-
-.content-root {
-  display: flex;
-  flex-direction: column;
-
-  .content-main {
-    flex: 1 0 auto;
-    padding: 24px 16px;
-  }
-
-  .content-footer {
-    text-align: center;
-    padding: 8px;
-  }
+a.active {
+  background-color: #eee;
 }

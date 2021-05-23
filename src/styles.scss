@@ -1,4 +1,14 @@
+@import 'styles/reset';
+
+@tailwind base;
+@layer base {
+  a {
+    @apply text-blue-600 underline;
+  }
+}
+
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 /* You can add global styles to this file, and also import other style files */
 
-@import 'styles/reset';
 @import 'styles/theme';
