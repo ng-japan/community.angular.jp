@@ -1,14 +1,14 @@
 <div class="flex flex-col gap-6">
-  <section class="section-hero flex flex-row items-center">
+  <section class="flex flex-row items-center">
     <img src="/assets/image/ng-japan.svg" width="96" height="96" alt="ng-japan" />
 
     <div>
-      <div class="mat-title">Angular日本ユーザー会へようこそ！</div>
+      <h2 class="text-2xl mb-2">Angular日本ユーザー会へようこそ！</h2>
 
-      <div class="mat-body-1">
+      <p class="text-sm">
         Angular日本ユーザー会は日本のAngular開発者によるユーザーコミュニティです。<br />
-        ナレッジの共有やイベントの開催、ドキュメントの翻訳などをおこなっています。
-      </div>
+        ナレッジの共有やイベントの開催、ドキュメントの翻訳などを中心に活動しています。
+      </p>
     </div>
   </section>
 
@@ -19,8 +19,8 @@
     </p>
   </section>
 
-  <section class="flex flex-col md:flex-row flex-wrap gap-4">
-    <app-card>
+  <section class="grid grid-flow-row lg:grid-flow-col gap-4">
+    <app-card class="lg:col-span-2 lg:row-span-2">
       <mat-icon card-icon>people</mat-icon>
       <span card-title>コミュニティに参加する</span>
       <div class="flex flex-col gap-2">
@@ -56,9 +56,11 @@
       <div class="flex flex-col gap-2">
         <p>
           <a href="https://angular.jp/" target="_blank" rel="noopener"> angular.jp </a>
-          は日本語版のAngular公式ドキュメントです。<br />
-          翻訳に協力してくれるコントリビューターを募集しています！
+          は日本語版のAngular公式ドキュメントです。翻訳に協力してくれるコントリビューターを募集しています！
         </p>
+        <a class="text-lg" href="https://github.com/angular/angular-ja" target="_blank" rel="noopener">
+          翻訳プロジェクトに参加する
+        </a>
       </div>
     </app-card>
 
@@ -67,10 +69,9 @@
       <span card-title> ローカルコミュニティ </span>
       <div class="flex flex-col gap-2">
         <p>
-          日本各地のローカルコミュニティがイベントを開催しています。<br />
-          お住まいの街の近くにあるコミュニティを探してみましょう！
+          日本各地のローカルコミュニティがイベントを開催しています。お住まいの街の近くにあるコミュニティを探してみましょう！
         </p>
-        <a [routerLink]="'/local'"> ローカルコミュニティを見る </a>
+        <a class="text-lg" [routerLink]="'/local'"> ローカルコミュニティを探す </a>
       </div>
     </app-card>
   </section>
