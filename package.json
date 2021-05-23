@@ -8,7 +8,8 @@
     "format:check": "prettier --check 'src/**/*.{ts,scss,html}'",
     "lint": "ng lint && yarn format:check",
     "start": "ng serve app",
-    "test": "ng test --no-watch"
+    "test": "ng test --no-watch",
+    "postinstall": "ngcc"
   },
   "dependencies": {
     "@angular/animations": "12.0.1",
@@ -23,6 +24,8 @@
     "@angular/router": "12.0.1",
     "@ngneat/tailwind": "7.0.3",
     "core-js": "3.12.1",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.1",
     "rxjs": "6.6.7",
     "tslib": "2.2.0",
     "web-animations-js": "2.3.2",
