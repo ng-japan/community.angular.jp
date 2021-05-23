@@ -8,5 +8,5 @@ import { localCommunities } from '../../../data/communities.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LocalPageComponent {
-  localCommunityList = localCommunities;
+  readonly localCommunityList = localCommunities;
 }

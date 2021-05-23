@@ -1,23 +1,28 @@
-<div class="root">
-  <header class="header">
+<div class="h-screen flex flex-col">
+  <header>
     <mat-toolbar color="primary">
       <button *ngIf="isMobile" mat-icon-button (click)="sideNav.toggle()"><mat-icon>menu</mat-icon></button>
       <h1>Angular Japan User Group</h1>
     </mat-toolbar>
   </header>
 
-  <mat-sidenav-container class="main">
+  <mat-sidenav-container class="flex-auto">
     <mat-sidenav #sideNav [mode]="isMobile ? 'over' : 'side'" [fixedInViewport]="isMobile">
-      <mat-nav-list class="links" (click)="onNavClick()">
-        <a mat-list-item [routerLink]="'/'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+      <mat-nav-list (click)="onNavClick()">
+        <a
+          mat-list-item
+          [routerLink]="'/'"
+          [routerLinkActive]="activeLinkClass"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
           トップ
         </a>
 
-        <a mat-list-item [routerLink]="'/policy'" [routerLinkActive]="'active'">コミュニティポリシー</a>
+        <a mat-list-item [routerLink]="'/policy'" [routerLinkActive]="activeLinkClass">コミュニティポリシー</a>
 
-        <a mat-list-item [routerLink]="'/local'" [routerLinkActive]="'active'">ローカルコミュニティ</a>
+        <a mat-list-item [routerLink]="'/local'" [routerLinkActive]="activeLinkClass">ローカルコミュニティ</a>
 
-        <a mat-list-item [routerLink]="'/about'" [routerLinkActive]="'active'">About</a>
+        <a mat-list-item [routerLink]="'/about'" [routerLinkActive]="activeLinkClass">About</a>
 
         <a mat-list-item href="https://ngjapan.org/" target="_blank" rel="noopener">
           ngjapan.org
@@ -36,15 +41,15 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content class="content-root">
-      <main class="content-main"><router-outlet></router-outlet></main>
+    <mat-sidenav-content>
+      <div class="h-full flex flex-col">
+        <main class="flex-auto px-6 py-4"><router-outlet></router-outlet></main>
 
-      <footer class="content-footer mat-caption">
-        <div class="copyright">&copy; Angular Japan User Group</div>
-        <a class="contribute" href="https://github.com/ng-japan/community.angular.jp" target="_blank" rel="noopener">
-          GitHub
-        </a>
-      </footer>
+        <footer class="mat-caption text-center p-2">
+          <div>&copy; Angular Japan User Group</div>
+          <a href="https://github.com/ng-japan/community.angular.jp" target="_blank" rel="noopener"> GitHub </a>
+        </footer>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -1,30 +1,3 @@
 :host {
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  > :not(:last-child) {
-    margin-bottom: 24px;
-  }
-}
-
-.community-list {
-  ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0 16px;
-    margin: 0;
-    li {
-      flex: 1;
-      margin-bottom: 8px;
-    }
-  }
-
-  .community-list-item {
-    border-radius: 8px;
-
-    .community-name {
-    }
-  }
+  display: block;
 }

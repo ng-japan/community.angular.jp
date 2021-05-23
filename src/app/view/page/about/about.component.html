@@ -1,19 +1,26 @@
-<div class="title mat-headline">コアメンバー</div>
+<div class="h-full flex flex-col gap-6">
+  <h3 class="text-2xl">コアメンバー</h3>
 
-<div class="description mat-body-1">
-  Angular日本ユーザー会を運営しているコアメンバーを紹介します。<br />
-  コミュニティポリシーに賛同いただき、コアメンバーとしてコミュニティを発展させることに興味があれば、いつでもわたしたちに声をかけてください！<br />
-</div>
+  <p class="text-sm">
+    Angular日本ユーザー会を運営しているコアメンバーを紹介します。<br />
+    コミュニティポリシーに賛同いただき、コアメンバーとしてコミュニティを発展させることに興味があれば、いつでもわたしたちに声をかけてください！<br />
+  </p>
 
-<div class="members">
-  <ul>
-    <li *ngFor="let item of members">
-      <div class="member-list-item">
-        <img src="https://unavatar.now.sh/twitter/{{ item.twitterScreenName }}" height="64" width="64" />
-        <a href="https://twitter.com/{{ item.twitterScreenName }}" target="_blank" rel="noopener">
-          {{ item.name }} <span *ngIf="item.role">&nbsp;({{ item.role }})</span>
-        </a>
-      </div>
-    </li>
-  </ul>
+  <div>
+    <ul>
+      <li *ngFor="let item of members" class="mb-4">
+        <div class="flex flex-row items-center gap-4">
+          <img
+            class="rounded-full border-gray-500"
+            src="https://unavatar.now.sh/twitter/{{ item.twitterScreenName }}"
+            height="64"
+            width="64"
+          />
+          <a href="https://twitter.com/{{ item.twitterScreenName }}" target="_blank" rel="noopener">
+            {{ item.name }} <span *ngIf="item.role">&nbsp;({{ item.role }})</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
