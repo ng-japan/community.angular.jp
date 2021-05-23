@@ -1,0 +1,26 @@
+:host {
+  display: block;
+}
+
+.markdown-outlet {
+  .content-root {
+    @apply flex flex-col;
+
+    > h1 {
+      @apply text-3xl py-4;
+    }
+    > h2 {
+      @apply text-xl py-4 border-t-2;
+    }
+    > ul {
+      @apply list-disc list-inside;
+
+      > li {
+        @apply my-2;
+      }
+    }
+    > p {
+      @apply py-4;
+    }
+  }
+}
