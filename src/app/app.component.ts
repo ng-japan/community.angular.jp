@@ -13,6 +13,8 @@ import { DocumentTitleChanger } from './service/document-title-changer';
 export class AppComponent implements OnInit, OnDestroy {
   isMobile = false;
 
+  readonly activeLinkClass = ['bg-gray-100'];
+
   @ViewChild(MatSidenav, { static: true }) sideNav!: MatSidenav;
 
   private readonly onDestroy$ = new Subject();
