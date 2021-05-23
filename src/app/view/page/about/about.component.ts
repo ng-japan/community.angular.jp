@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { members } from '../../../data/members.data';
 
 @Component({
   selector: 'app-about',
@@ -7,6 +6,4 @@ import { members } from '../../../data/members.data';
   styleUrls: ['./about.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutPageComponent {
-  readonly members = members;
-}
+export class AboutPageComponent {}
