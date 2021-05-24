@@ -8,10 +8,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeModule } from './view/page/home/home.module';
-import { PolicyModule } from './view/page/policy/policy.module';
-import { LocalModule } from './view/page/local/local.module';
-import { AboutUsModule } from './view/page/about/about.module';
+import { HomeModule } from './pages/home/home.module';
+import { PolicyModule } from './pages/policy/policy.module';
+import { LocalModule } from './pages/local/local.module';
+import { AboutUsModule } from './pages/about/about.module';
 
 @NgModule({
   declarations: [AppComponent],

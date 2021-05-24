@@ -3,7 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { from, ReplaySubject } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { filter, map, switchMap } from 'rxjs/operators';
-import { processMarkdown } from '../../../markdown';
+import { processMarkdown } from '../markdown';
 
 @Component({
   selector: 'app-markdown-outlet',

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HomePageComponent } from './view/page/home/home.component';
-import { PolicyPageComponent } from './view/page/policy/policy.component';
-import { LocalPageComponent } from './view/page/local/local.component';
-import { AboutPageComponent } from './view/page/about/about.component';
+import { HomePageComponent } from './pages/home/home.component';
+import { PolicyPageComponent } from './pages/policy/policy.component';
+import { LocalPageComponent } from './pages/local/local.component';
+import { AboutPageComponent } from './pages/about/about.component';
 
 export const routes = [
   {

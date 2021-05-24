@@ -9,4 +9,4 @@ import { MarkdownOutletComponent } from './markdown-outlet/markdown-outlet.compo
   imports: [CommonModule, MatCardModule],
   exports: [CardComponent, MarkdownOutletComponent],
 })
-export class ComponentsModule {}
+export class SharedModule {}
