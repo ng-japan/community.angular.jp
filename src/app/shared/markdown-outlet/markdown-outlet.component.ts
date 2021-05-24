@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { from, ReplaySubject } from 'rxjs';
-import { ajax } from 'rxjs/ajax';
-import { filter, map, switchMap } from 'rxjs/operators';
+import { from, of, ReplaySubject } from 'rxjs';
+import { ajax, AjaxError } from 'rxjs/ajax';
+import { catchError, filter, map, switchMap } from 'rxjs/operators';
 import { processMarkdown } from '../markdown';
 
 @Component({
@@ -26,8 +26,13 @@ export class MarkdownOutletComponent {
 
   readonly html$ = this.markdownSource$.pipe(
     filter((value) => value != null),
-    switchMap((source) => from(ajax({ url: source, responseType: 'text' }))),
-    switchMap(({ response }) => from(processMarkdown(response))),
+    switchMap((source) =>
+      ajax({ url: source, responseType: 'text' }).pipe(
+        map(({ response }) => response),
+        catchError((error: AjaxError) => of(error.response)),
+      ),
+    ),
+    switchMap((markdown) => from(processMarkdown(markdown))),
     map((html) => this.sanitizer.bypassSecurityTrustHtml(html)),
   );
 

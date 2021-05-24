@@ -12,11 +12,16 @@
     > h2 {
       @apply text-xl py-4 mt-4 border-t-2;
     }
-    > ul {
+    ul {
       @apply list-disc list-inside;
 
       > li {
-        @apply my-2;
+        @apply mb-2;
+      }
+
+      // Nested list
+      ul {
+        @apply pl-4 md:pl-8;
       }
     }
     > p {

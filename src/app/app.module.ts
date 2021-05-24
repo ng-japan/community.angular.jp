@@ -12,6 +12,7 @@ import { HomeModule } from './pages/home/home.module';
 import { PolicyModule } from './pages/policy/policy.module';
 import { LocalModule } from './pages/local/local.module';
 import { AboutUsModule } from './pages/about/about.module';
+import { LearnModule } from './pages/learn/learn.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +30,7 @@ import { AboutUsModule } from './pages/about/about.module';
     PolicyModule,
     LocalModule,
     AboutUsModule,
+    LearnModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
