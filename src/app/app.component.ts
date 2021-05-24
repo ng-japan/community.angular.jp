@@ -1,36 +1,32 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { Subject } from 'rxjs';
-import { map, takeUntil } from 'rxjs/operators';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { DocumentTitleChanger } from './service/document-title-changer';
+import { Title } from '@angular/platform-browser';
+import { map } from 'rxjs/operators';
+import { PageTitleService } from './shared/page-title.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   isMobile = false;
 
   readonly activeLinkClass = ['bg-gray-100'];
 
   @ViewChild(MatSidenav, { static: true }) sideNav!: MatSidenav;
 
-  private readonly onDestroy$ = new Subject();
-
   constructor(
     private readonly breakpointObserver: BreakpointObserver,
-    private readonly documentTitleChanger: DocumentTitleChanger,
+    private readonly pageTitleService: PageTitleService,
+    private readonly titleService: Title,
   ) {}
 
   ngOnInit() {
     this.breakpointObserver
       .observe('(max-width: 600px)')
-      .pipe(
-        takeUntil(this.onDestroy$),
-        map((state) => state.matches),
-      )
+      .pipe(map((state) => state.matches))
       .subscribe((isMobile) => {
         this.isMobile = isMobile;
         if (!isMobile) {
@@ -40,12 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
         }
       });
 
-    this.documentTitleChanger.connect(this.onDestroy$);
-  }
-
-  ngOnDestroy() {
-    this.onDestroy$.next();
-    this.onDestroy$.complete();
+    this.pageTitleService.titleChange$.subscribe((pageTitle) => this.titleService.setTitle(pageTitle));
   }
 
   onNavClick() {
