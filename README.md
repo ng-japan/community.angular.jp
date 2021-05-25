@@ -1,7 +1,7 @@
-# Angular Japan Communities Map
+# community.angular.jp
 
-これは、Angular Japan Communities(https://community.angular.jp/) のためのリポジトリです。
+https://community.angular.jp/
 
-## コミュニティを追加する
+## License
 
-表示されるコミュニティは `src/app/content/local-communities.md` ファイルで管理されています。
+MIT
