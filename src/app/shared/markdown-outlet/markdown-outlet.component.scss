@@ -7,25 +7,30 @@
     @apply flex flex-col;
 
     > h1 {
-      @apply text-3xl py-4;
+      @apply font-bold text-3xl py-4;
     }
     > h2 {
       @apply text-xl py-4 mt-4 border-t-2;
     }
+    > h3 {
+      @apply font-bold text-lg py-2;
+    }
+    > p {
+      @apply py-1;
+    }
     ul {
-      @apply list-disc list-inside;
+      @apply list-inside;
+      list-style-type: disc;
 
-      > li {
-        @apply mb-2;
+      li {
+        @apply py-1;
       }
 
       // Nested list
       ul {
         @apply pl-4 md:pl-8;
+        list-style-type: circle;
       }
-    }
-    > p {
-      @apply py-1;
     }
   }
 }
