@@ -24,7 +24,7 @@
     "@angular/router": "12.0.1",
     "@ngneat/tailwind": "7.0.3",
     "comlink": "4.3.1",
-    "core-js": "3.12.1",
+    "core-js": "3.13.0",
     "remark": "13.0.0",
     "remark-html": "13.0.1",
     "rxjs": "6.6.7",
