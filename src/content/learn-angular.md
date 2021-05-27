@@ -2,7 +2,7 @@
 
 ここでは Angular を学ぶのに役立つコンテンツを日本語のものを中心に紹介します。
 
-リストに追加したいコンテンツがあれば、[GitHub](https://github.com/ng-japan/community.angular.jp/blob/master/src/content/learn-angular.md) にプルリクエストを送ってください。
+リストに追加したいコンテンツがあれば、[GitHub](https://github.com/ng-japan/community.angular.jp/blob/main/src/content/learn-angular.md) にプルリクエストを送ってください。
 
 ## 入門者向け
 
