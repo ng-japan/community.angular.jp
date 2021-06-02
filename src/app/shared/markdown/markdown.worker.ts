@@ -1,5 +1,5 @@
-import * as remark from 'remark';
-import * as html from 'remark-html';
+import remark from 'remark';
+import html from 'remark-html';
 import { expose } from 'comlink';
 
 export const api = {
