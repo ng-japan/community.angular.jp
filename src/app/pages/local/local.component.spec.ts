@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { SharedModule } from '../../shared/shared.module';
 
@@ -11,7 +12,7 @@ describe('LocalComponent', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [LocalPageComponent],
-        imports: [SharedModule],
+        imports: [SharedModule, HttpClientTestingModule],
       }).compileComponents();
     }),
   );

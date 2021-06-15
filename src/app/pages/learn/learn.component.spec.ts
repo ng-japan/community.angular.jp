@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SharedModule } from '../../shared/shared.module';
 
 import { LearnPageComponent } from './learn.component';
@@ -10,7 +11,7 @@ describe('LearnComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LearnPageComponent],
-      imports: [SharedModule],
+      imports: [SharedModule, HttpClientTestingModule],
     }).compileComponents();
   });
 
