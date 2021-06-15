@@ -1,7 +1,7 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { from, of, ReplaySubject } from 'rxjs';
-import { ajax, AjaxError } from 'rxjs/ajax';
 import { catchError, filter, map, switchMap } from 'rxjs/operators';
 import { processMarkdown } from '../markdown';
 
@@ -27,14 +27,13 @@ export class MarkdownOutletComponent {
   readonly html$ = this.markdownSource$.pipe(
     filter((value) => value != null),
     switchMap((source) =>
-      ajax({ url: source, responseType: 'text' }).pipe(
-        map(({ response }) => response),
-        catchError((error: AjaxError) => of(error.response)),
-      ),
+      this.httpClient
+        .get(source, { responseType: 'text' })
+        .pipe(catchError((error: HttpErrorResponse) => of(error.message))),
     ),
     switchMap((markdown) => from(processMarkdown(markdown))),
     map((html) => this.sanitizer.bypassSecurityTrustHtml(html)),
   );
 
-  constructor(private readonly sanitizer: DomSanitizer) {}
+  constructor(private readonly sanitizer: DomSanitizer, private httpClient: HttpClient) {}
 }
