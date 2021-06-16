@@ -7,9 +7,3 @@
     @apply text-blue-600 underline;
   }
 }
-
-@layer components {
-  .mat-drawer-backdrop.mat-drawer-shown {
-    @apply bg-black opacity-60;
-  }
-}
