@@ -18,18 +18,20 @@
     .toString()
     .split('\n')
     .filter((line) => line.trim().length > 0)
-    .map((line) => line.trim().split(/\s+/).slice(1, 3));
+    // PASS  <path>: <size> <compression>
+    .map((line) => line.trim().split(/\s+/).slice(1, 3))
+    .filter((file) => file.length === 2);
 
   const content = [
     `## :package: bundlesize report (${commitSha})`,
     '',
     '| File | Size |',
     '| :--- | ---: |',
-    ...files.map(([path, size]) => `| \`${path.replace(/:$/, '')}\` | ${size} |`),
+    ...files.map(([filePath, size]) => `| \`${filePath.replace(/:$/, '')}\` | ${size} |`),
   ].join('\n');
 
   if (prNumber) {
-    await $`gh pr comment ${prNumber} --body="${output}"`;
+    await $`gh pr comment ${prNumber} --body="${content}"`;
   } else {
     process.stdout.write(content.toString() + '\n');
   }
