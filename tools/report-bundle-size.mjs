@@ -18,7 +18,7 @@ const globPatterns = ['dist/app/*.{js,css}'];
   });
 
   const content = [
-    `## :package: bundlesize report (${commitSha})`,
+    `## :package: bundle size report (${commitSha})`,
     '',
     '| File | Size |',
     '| :--- | ---: |',
