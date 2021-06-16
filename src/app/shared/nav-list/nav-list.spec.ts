@@ -6,29 +6,27 @@ import { NavListDirective, NavListItemDirective } from './nav-list';
 
 describe('NavListDirective', () => {
   it('should render', async () => {
-    const { getByRole } = await render(`<div appNavList ></div>`, {
+    const { getByTestId } = await render(`<div appNavList data-testid="TEST"></div>`, {
       declarations: [NavListDirective],
     });
-    expect(getByRole('list')).toHaveClass('flex flex-col py-2');
+    expect(getByTestId('TEST')).toHaveClass('flex flex-col py-2');
   });
 });
 
 describe('NavListItemDirective', () => {
   it('should render', async () => {
-    const { getByRole } = await render(`<div appNavListItem ></div>`, {
+    const { getByTestId } = await render(`<div appNavListItem data-testid="TEST"></div>`, {
       declarations: [NavListItemDirective],
     });
-    expect(getByRole('listitem')).toHaveClass(
-      'flex items-center gap-2 h-12 px-4 no-underline text-black hover:bg-gray-100',
-    );
+    expect(getByTestId('TEST')).toHaveClass('flex items-center h-12 px-4 no-underline text-black hover:bg-gray-100');
   });
 
   it('should change background color if active', async () => {
     const {
-      getByRole,
+      getByTestId,
       detectChanges,
       fixture: { debugElement },
-    } = await render(`<div appNavListItem routerLink routerLinkActive></div>`, {
+    } = await render(`<div appNavListItem data-testid="TEST" routerLink routerLinkActive></div>`, {
       declarations: [NavListItemDirective],
       imports: [RouterTestingModule],
     });
@@ -36,6 +34,6 @@ describe('NavListItemDirective', () => {
     (rla as any).isActive = true;
     detectChanges();
 
-    expect(getByRole('listitem')).toHaveClass('bg-gray-100');
+    expect(getByTestId('TEST')).toHaveClass('bg-gray-100');
   });
 });
