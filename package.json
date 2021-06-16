@@ -9,7 +9,7 @@
     "format:check": "prettier --check 'src/**/*.{ts,scss,html}'",
     "lint": "ng lint && yarn format:check",
     "start": "ng serve app",
-    "test": "NODE_OPTIONS=--experimental-vm-modules ng test",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "tools:report-bundle-size": "./tools/report-bundle-size.mjs",
     "postinstall": "ngcc"
   },
@@ -47,6 +47,8 @@
     "@angular/language-service": "12.0.4",
     "@nguniversal/builders": "12.1.0-next.0",
     "@nrwl/jest": "12.3.6",
+    "@testing-library/angular": "10.8.2",
+    "@testing-library/jest-dom": "5.14.1",
     "@types/jest": "26.0.23",
     "@types/node": "14.17.3",
     "@typescript-eslint/eslint-plugin": "4.27.0",
