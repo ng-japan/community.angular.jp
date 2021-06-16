@@ -6,8 +6,7 @@ import { RouterLinkActive } from '@angular/router';
   selector: '[appNavListItem]',
   // eslint-disable-next-line @angular-eslint/no-host-metadata-property
   host: {
-    role: 'listitem',
-    class: 'flex items-center gap-2 h-12 px-4 no-underline text-black hover:bg-gray-100',
+    class: 'flex items-center h-12 px-4 no-underline text-black hover:bg-gray-100',
     '[class.bg-gray-100]': 'active',
   },
 })
@@ -24,7 +23,6 @@ export class NavListItemDirective {
   selector: '[appNavList]',
   // eslint-disable-next-line @angular-eslint/no-host-metadata-property
   host: {
-    role: 'list',
     class: 'flex flex-col py-2',
   },
 })

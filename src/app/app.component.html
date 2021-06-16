@@ -3,6 +3,8 @@
     <div class="flex flex-row items-center h-14 lg:h-16 px-4 bg-primary text-white">
       <button
         *ngIf="isMobile"
+        aria-label="open menu"
+        aria-haspopup="menu"
         class="flex items-center justify-center w-10 h-10 rounded focus:ring"
         (click)="sideNav.toggle()"
       >
