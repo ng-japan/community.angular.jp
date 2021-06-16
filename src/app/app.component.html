@@ -1,22 +1,45 @@
 <div class="h-screen flex flex-col">
   <header>
-    <div class="flex flex-row items-center h-14 lg:h-16 px-4 bg-primary text-white">
+    <div class="flex flex-row items-center justify-between h-14 lg:h-16 px-4 bg-primary text-white">
+      <span class="text-xl font-semibold">Angular Japan User Group</span>
+
       <button
-        *ngIf="isMobile"
         aria-label="open menu"
         aria-haspopup="menu"
-        class="flex items-center justify-center w-10 h-10 rounded focus:ring"
-        (click)="sideNav.toggle()"
+        class="flex items-center justify-center w-10 h-10 rounded focus:ring md:hidden"
+        (click)="toggleMenu()"
       >
         <app-icon-menu></app-icon-menu>
       </button>
-      <span class="text-xl font-semibold">Angular Japan User Group</span>
     </div>
   </header>
 
-  <mat-sidenav-container class="flex-auto">
-    <mat-sidenav #sideNav class="bg-white" [mode]="isMobile ? 'over' : 'side'" [fixedInViewport]="isMobile">
-      <nav appNavList (click)="onNavClick()">
+  <div class="relative flex">
+    <!-- backdrop -->
+    <div
+      class="w-full h-full absolute inset-y-0 left-0 bg-black opacity-60"
+      [class.hidden]="!isMenuOpen"
+      (click)="closeMenu()"
+    ></div>
+    <!-- sidenav -->
+    <div
+      class="
+        bg-white
+        shadow
+        z-10
+        w-64
+        absolute
+        inset-y-0
+        left-0
+        transform
+        md:relative md:translate-x-0
+        transition
+        duration-200
+        ease-in-out
+      "
+      [class.-translate-x-full]="!isMenuOpen"
+    >
+      <nav appNavList (click)="closeMenu()">
         <a appNavListItem routerLink="/" routerLinkActive [routerLinkActiveOptions]="{ exact: true }"> トップ </a>
         <a appNavListItem [routerLink]="'/policy'" routerLinkActive>コミュニティポリシー</a>
         <a appNavListItem [routerLink]="'/local'" routerLinkActive>ローカルコミュニティ</a>
@@ -38,17 +61,18 @@
           <span>Twitter</span>
         </a>
       </nav>
-    </mat-sidenav>
+    </div>
 
-    <mat-sidenav-content>
-      <div class="h-full flex flex-col">
-        <main class="flex-auto px-6 py-4"><router-outlet></router-outlet></main>
+    <!-- content -->
+    <div class="flex-1 flex flex-col">
+      <main class="flex-1 px-6 py-4">
+        <router-outlet></router-outlet>
+      </main>
 
-        <footer class="mat-caption text-center p-2">
-          <div>&copy; Angular Japan User Group</div>
-          <a href="https://github.com/ng-japan/community.angular.jp" target="_blank" rel="noopener"> GitHub </a>
-        </footer>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+      <footer class="text-center p-2">
+        <div>&copy; Angular Japan User Group</div>
+        <a href="https://github.com/ng-japan/community.angular.jp" target="_blank" rel="noopener"> GitHub </a>
+      </footer>
+    </div>
+  </div>
 </div>
