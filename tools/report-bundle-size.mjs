@@ -14,8 +14,7 @@
     process.exit(output.exitCode);
   }
 
-  const files = output
-    .toString()
+  const files = output.stdout
     .split('\n')
     .filter((line) => line.trim().length > 0)
     // PASS  <path>: <size> <compression>
