@@ -1,33 +1,30 @@
 #!/usr/bin/env zx
 /* global $ */
 
+const fs = require('fs');
+const globby = require('globby');
+const filesize = require('filesize');
+
+const commitSha = process.env.COMMIT_SHA ?? null;
+const prNumber = process.env.PR_NUMBER ?? null;
+const globPatterns = ['dist/app/*.{js,css}'];
+
 (async () => {
-  const prNumber = process.env.PR_NUMBER ?? null;
-  const commitSha = process.env.COMMIT_SHA ?? null;
+  const files = await globby(globPatterns);
 
-  $.verbose = false;
-
-  const output = await $`bundlesize`;
-
-  if (output.stderr) {
-    process.stderr.write(output.stderr);
-    process.exit(output.exitCode);
-  }
-
-  const files = output.stdout
-    .split('\n')
-    .filter((line) => line.trim().length > 0)
-    // PASS  <path>: <size> <compression>
-    .map((line) => line.trim().split(/\s+/).slice(1, 3))
-    .filter((file) => file.length === 2);
+  const fileStats = files.map((filePath) => {
+    const stat = fs.statSync(filePath);
+    return [filePath, filesize(stat.size)];
+  });
 
   const content = [
     `## :package: bundlesize report (${commitSha})`,
     '',
     '| File | Size |',
     '| :--- | ---: |',
-    ...files.map(([filePath, size]) => `| \`${filePath.replace(/:$/, '')}\` | ${size} |`),
+    ...fileStats.map(([filePath, size]) => `| \`${filePath}\` | ${size} |`),
   ].join('\n');
+
   if (prNumber) {
     // eslint-disable-next-line no-useless-escape
     await $`gh pr comment ${prNumber} --body=${content}`;
