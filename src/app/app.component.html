@@ -1,43 +1,41 @@
 <div class="h-screen flex flex-col">
   <header>
     <mat-toolbar color="primary">
-      <button *ngIf="isMobile" mat-icon-button (click)="sideNav.toggle()"><mat-icon>menu</mat-icon></button>
+      <button
+        *ngIf="isMobile"
+        class="flex items-center justify-center w-10 h-10 rounded focus:ring"
+        (click)="sideNav.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
       <span>Angular Japan User Group</span>
     </mat-toolbar>
   </header>
 
   <mat-sidenav-container class="flex-auto">
     <mat-sidenav #sideNav [mode]="isMobile ? 'over' : 'side'" [fixedInViewport]="isMobile">
-      <mat-nav-list (click)="onNavClick()">
-        <a
-          mat-list-item
-          [routerLink]="'/'"
-          [routerLinkActive]="activeLinkClass"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          トップ
+      <nav appNavList (click)="onNavClick()">
+        <a appNavListItem routerLink="/" routerLinkActive [routerLinkActiveOptions]="{ exact: true }"> トップ </a>
+        <a appNavListItem [routerLink]="'/policy'" routerLinkActive>コミュニティポリシー</a>
+        <a appNavListItem [routerLink]="'/local'" routerLinkActive>ローカルコミュニティ</a>
+        <a appNavListItem [routerLink]="'/learn'" routerLinkActive>Angularを学ぶ</a>
+        <a appNavListItem [routerLink]="'/about'" routerLinkActive>About</a>
+
+        <a appNavListItem href="https://ngjapan.org/" target="_blank" rel="noopener">
+          <mat-icon>open_in_new</mat-icon>
+          <span>ngjapan.org</span>
         </a>
 
-        <a mat-list-item [routerLink]="'/policy'" [routerLinkActive]="activeLinkClass">コミュニティポリシー</a>
-        <a mat-list-item [routerLink]="'/local'" [routerLinkActive]="activeLinkClass">ローカルコミュニティ</a>
-        <a mat-list-item [routerLink]="'/learn'" [routerLinkActive]="activeLinkClass">Angularを学ぶ</a>
-        <a mat-list-item [routerLink]="'/about'" [routerLinkActive]="activeLinkClass">About</a>
-
-        <a mat-list-item href="https://ngjapan.org/" target="_blank" rel="noopener">
-          ngjapan.org
-          <mat-icon mat-list-icon>open_in_new</mat-icon>
+        <a appNavListItem href="https://medium.com/angular-japan-user-group" target="_blank" rel="noopener">
+          <mat-icon>open_in_new</mat-icon>
+          <span>公式ブログ</span>
         </a>
 
-        <a mat-list-item href="https://medium.com/angular-japan-user-group" target="_blank" rel="noopener">
-          公式ブログ
-          <mat-icon mat-list-icon>open_in_new</mat-icon>
+        <a appNavListItem href="https://twitter.com/ng_japan" target="_blank" rel="noopener">
+          <mat-icon>open_in_new</mat-icon>
+          <span>Twitter</span>
         </a>
-
-        <a mat-list-item href="https://twitter.com/ng_japan" target="_blank" rel="noopener">
-          Twitter
-          <mat-icon mat-list-icon>open_in_new</mat-icon>
-        </a>
-      </mat-nav-list>
+      </nav>
     </mat-sidenav>
 
     <mat-sidenav-content>
