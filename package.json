@@ -54,7 +54,7 @@
     "autoprefixer": "10.2.6",
     "eslint": "7.28.0",
     "filesize": "6.3.0",
-    "globby": "11.0.3",
+    "globby": "11.0.4",
     "jest": "27.0.4",
     "jest-preset-angular": "9.0.4",
     "postcss": "8.3.4",
