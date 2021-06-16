@@ -28,7 +28,10 @@
     '| File | Size |',
     '| :--- | ---: |',
     ...files.map(([filePath, size]) => `| \`${filePath.replace(/:$/, '')}\` | ${size} |`),
-  ].join('\n');
+  ]
+    .join('\n')
+    // eslint-disable-next-line no-useless-escape
+    .replace(/\|/g, '\\|');
 
   if (prNumber) {
     await $`gh pr comment ${prNumber} --body="${content}"`;
