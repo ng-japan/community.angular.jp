@@ -1,6 +1,6 @@
-@import 'styles/theme';
-
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   a {
@@ -8,6 +8,8 @@
   }
 }
 
-@tailwind components;
-@tailwind utilities;
-/* You can add global styles to this file, and also import other style files */
+@layer components {
+  .mat-drawer-backdrop.mat-drawer-shown {
+    @apply bg-black opacity-60;
+  }
+}
