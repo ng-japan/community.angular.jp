@@ -46,7 +46,7 @@
     "@angular/compiler-cli": "12.0.4",
     "@angular/language-service": "12.0.4",
     "@nguniversal/builders": "12.1.0-next.0",
-    "@nrwl/jest": "12.3.6",
+    "@nrwl/jest": "12.4.0",
     "@testing-library/angular": "10.8.2",
     "@testing-library/jest-dom": "5.14.1",
     "@types/jest": "26.0.23",
