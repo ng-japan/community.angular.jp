@@ -1,6 +1,6 @@
 name: CI
 
-on: 
+on:
   - pull_request
 
 jobs:
@@ -9,18 +9,24 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
 
     steps:
-    - uses: actions/checkout@v2
-      with: 
-        submodules: true
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: yarn install
-    - run: yarn lint
-    - run: yarn test
-    - run: yarn build
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install
+      - run: yarn lint
+      - run: yarn test
+      - run: yarn build
+      - name: Report bundlesize
+        run: yarn tools:report-bundle-size
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
