@@ -27,5 +27,6 @@ jobs:
       - name: Report bundlesize
         run: yarn tools:report-bundle-size
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.number }}
           COMMIT_SHA: ${{ github.sha }}
