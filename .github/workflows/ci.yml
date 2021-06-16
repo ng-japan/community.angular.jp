@@ -25,7 +25,7 @@ jobs:
       - run: yarn test
       - run: yarn build
       - name: Report bundlesize
-        run: tools:report-bundle-size
+        run: yarn tools:report-bundle-size
         env:
           PR_NUMBER: ${{ github.event.number }}
           COMMIT_SHA: ${{ github.sha }}
