@@ -28,13 +28,10 @@
     '| File | Size |',
     '| :--- | ---: |',
     ...files.map(([filePath, size]) => `| \`${filePath.replace(/:$/, '')}\` | ${size} |`),
-  ]
-    .join('\n')
-    // eslint-disable-next-line no-useless-escape
-    .replace(/\|/g, '\\|');
-
+  ].join('\n');
   if (prNumber) {
-    await $`gh pr comment ${prNumber} --body="${content}"`;
+    // eslint-disable-next-line no-useless-escape
+    await $`gh pr comment ${prNumber} --body="${content.replace(/\|/g, '\\|')}"`;
   } else {
     process.stdout.write(content.toString() + '\n');
   }
