@@ -1,6 +1,6 @@
 <div class="h-screen flex flex-col">
   <header>
-    <mat-toolbar color="primary">
+    <div class="flex flex-row items-center h-14 lg:h-16 px-4 bg-primary text-white">
       <button
         *ngIf="isMobile"
         class="flex items-center justify-center w-10 h-10 rounded focus:ring"
@@ -8,12 +8,12 @@
       >
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Angular Japan User Group</span>
-    </mat-toolbar>
+      <span class="text-xl font-semibold">Angular Japan User Group</span>
+    </div>
   </header>
 
   <mat-sidenav-container class="flex-auto">
-    <mat-sidenav #sideNav [mode]="isMobile ? 'over' : 'side'" [fixedInViewport]="isMobile">
+    <mat-sidenav #sideNav class="bg-white" [mode]="isMobile ? 'over' : 'side'" [fixedInViewport]="isMobile">
       <nav appNavList (click)="onNavClick()">
         <a appNavListItem routerLink="/" routerLinkActive [routerLinkActiveOptions]="{ exact: true }"> トップ </a>
         <a appNavListItem [routerLink]="'/policy'" routerLinkActive>コミュニティポリシー</a>
