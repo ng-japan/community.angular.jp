@@ -31,7 +31,7 @@
   ].join('\n');
   if (prNumber) {
     // eslint-disable-next-line no-useless-escape
-    await $`gh pr comment ${prNumber} --body="${content.replace(/\|/g, '\\|')}"`;
+    await $`gh pr comment ${prNumber} --body=${content}`;
   } else {
     process.stdout.write(content.toString() + '\n');
   }
