@@ -6,7 +6,7 @@
         class="flex items-center justify-center w-10 h-10 rounded focus:ring"
         (click)="sideNav.toggle()"
       >
-        <mat-icon>menu</mat-icon>
+        <app-icon-menu></app-icon-menu>
       </button>
       <span class="text-xl font-semibold">Angular Japan User Group</span>
     </div>
@@ -22,17 +22,17 @@
         <a appNavListItem [routerLink]="'/about'" routerLinkActive>About</a>
 
         <a appNavListItem href="https://ngjapan.org/" target="_blank" rel="noopener">
-          <mat-icon>open_in_new</mat-icon>
+          <app-icon-external-link></app-icon-external-link>
           <span>ngjapan.org</span>
         </a>
 
         <a appNavListItem href="https://medium.com/angular-japan-user-group" target="_blank" rel="noopener">
-          <mat-icon>open_in_new</mat-icon>
+          <app-icon-external-link></app-icon-external-link>
           <span>公式ブログ</span>
         </a>
 
         <a appNavListItem href="https://twitter.com/ng_japan" target="_blank" rel="noopener">
-          <mat-icon>open_in_new</mat-icon>
+          <app-icon-external-link></app-icon-external-link>
           <span>Twitter</span>
         </a>
       </nav>
