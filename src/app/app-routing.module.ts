@@ -1,12 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Route, RouterModule } from '@angular/router';
 import { HomePageComponent } from './pages/home/home.component';
-import { PolicyPageComponent } from './pages/policy/policy.component';
-import { LocalPageComponent } from './pages/local/local.component';
-import { AboutPageComponent } from './pages/about/about.component';
-import { LearnPageComponent } from './pages/learn/learn.component';
-
-export const routes = [
+export const routes: Route[] = [
   {
     path: '',
     pathMatch: 'full',
@@ -15,28 +10,28 @@ export const routes = [
   },
   {
     path: 'policy',
-    component: PolicyPageComponent,
+    loadChildren: () => import('./pages/policy/policy.module').then((m) => m.PolicyModule),
     data: {
       documentTitle: 'コミュニティポリシー',
     },
   },
   {
     path: 'local',
-    component: LocalPageComponent,
+    loadChildren: () => import('./pages/local/local.module').then((m) => m.LocalModule),
     data: {
       documentTitle: 'ローカルコミュニティ',
     },
   },
   {
     path: 'about',
-    component: AboutPageComponent,
+    loadChildren: () => import('./pages/about/about.module').then((m) => m.AboutUsModule),
     data: {
       documentTitle: 'About',
     },
   },
   {
     path: 'learn',
-    component: LearnPageComponent,
+    loadChildren: () => import('./pages/learn/learn.module').then((m) => m.LearnModule),
     data: {
       documentTitle: 'Angularを学ぶ',
     },

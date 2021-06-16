@@ -10,11 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RendererModule, TransferHttpCacheModule } from '@nguniversal/common/clover';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutUsModule } from './pages/about/about.module';
 import { HomeModule } from './pages/home/home.module';
-import { LearnModule } from './pages/learn/learn.module';
-import { LocalModule } from './pages/local/local.module';
-import { PolicyModule } from './pages/policy/policy.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,10 +29,6 @@ import { PolicyModule } from './pages/policy/policy.module';
 
     AppRoutingModule,
     HomeModule,
-    PolicyModule,
-    LocalModule,
-    AboutUsModule,
-    LearnModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
