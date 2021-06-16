@@ -13,8 +13,6 @@ import { PageTitleService } from './shared/page-title.service';
 export class AppComponent implements OnInit {
   isMobile = false;
 
-  readonly activeLinkClass = ['bg-gray-100'];
-
   @ViewChild(MatSidenav, { static: true }) sideNav!: MatSidenav;
 
   constructor(

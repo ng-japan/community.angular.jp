@@ -11,6 +11,7 @@ import { RendererModule, TransferHttpCacheModule } from '@nguniversal/common/clo
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './pages/home/home.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,9 +24,8 @@ import { HomeModule } from './pages/home/home.module';
 
     MatToolbarModule,
     MatSidenavModule,
-    MatButtonModule,
     MatIconModule,
-    MatListModule,
+    SharedModule,
 
     AppRoutingModule,
     HomeModule,
