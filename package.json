@@ -57,7 +57,7 @@
     "globby": "11.0.4",
     "jest": "27.0.6",
     "jest-preset-angular": "9.0.4",
-    "postcss": "8.3.5",
+    "postcss": "8.3.6",
     "prettier": "2.3.1",
     "tailwindcss": "2.2.2",
     "ts-jest": "27.0.3",
