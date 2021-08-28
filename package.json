@@ -52,7 +52,7 @@
     "@typescript-eslint/eslint-plugin": "4.28.3",
     "@typescript-eslint/parser": "4.28.3",
     "autoprefixer": "10.3.3",
-    "eslint": "7.29.0",
+    "eslint": "7.32.0",
     "filesize": "8.0.0",
     "globby": "11.0.4",
     "jest": "27.1.0",
