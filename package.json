@@ -51,7 +51,7 @@
     "@types/node": "14.17.32",
     "@typescript-eslint/eslint-plugin": "4.31.2",
     "@typescript-eslint/parser": "4.31.2",
-    "autoprefixer": "10.3.5",
+    "autoprefixer": "10.4.0",
     "eslint": "7.32.0",
     "filesize": "8.0.0",
     "globby": "11.0.4",
