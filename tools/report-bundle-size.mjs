@@ -2,7 +2,7 @@
 /* global $ */
 
 const fs = require('fs');
-const globby = require('globby');
+import { globby } from 'globby';
 const filesize = require('filesize');
 
 const commitSha = process.env.COMMIT_SHA ?? null;
