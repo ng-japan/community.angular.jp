@@ -1,3 +1,9 @@
 {
-  "extends": ["config:base", "github>lacolaco/renovate-config:default", "github>lacolaco/renovate-config:ng-update"]
+  "extends": ["config:base", "github>lacolaco/renovate-config:default", "github>lacolaco/renovate-config:ng-update"],
+  "packageRules": [
+    {
+      "groupName": "@nguniversal packages",
+      "matchPackagePatterns": ["^@nguniversal/"]
+    }
+  ]
 }
