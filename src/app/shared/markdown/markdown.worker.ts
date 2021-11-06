@@ -1,11 +1,11 @@
-import remark from 'remark';
-import html from 'remark-html';
+import { remark } from 'remark';
+import remarkHtml from 'remark-html';
 import { expose } from 'comlink';
 
 export const api = {
   async processMarkdown(source: string): Promise<string> {
     return remark()
-      .use(html, {
+      .use(remarkHtml, {
         handlers: {
           link: (h, node) => {
             const { url, children } = node as unknown as { url: string; children: any[] };
