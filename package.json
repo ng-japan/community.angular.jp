@@ -26,9 +26,9 @@
     "@ngneat/tailwind": "7.0.3",
     "@nguniversal/common": "13.0.0",
     "comlink": "4.3.1",
-    "core-js": "3.18.0",
-    "remark": "13.0.0",
-    "remark-html": "13.0.2",
+    "core-js": "3.19.1",
+    "remark": "14.0.1",
+    "remark-html": "15.0.0",
     "rxjs": "6.6.7",
     "tslib": "2.3.1",
     "zone.js": "0.11.4"
