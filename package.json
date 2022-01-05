@@ -9,7 +9,7 @@
     "format:check": "prettier --check 'src/**/*.{ts,scss,html}'",
     "lint": "ng lint && yarn format:check",
     "start": "ng serve app",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test": "jest",
     "tools:report-bundle-size": "./tools/report-bundle-size.mjs",
     "postinstall": "ngcc"
   },
