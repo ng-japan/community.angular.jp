@@ -1,5 +1,4 @@
 module.exports = {
-  // `import.meta` requires ESM support
-  preset: 'jest-preset-angular/presets/defaults-esm',
+  preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
 };
