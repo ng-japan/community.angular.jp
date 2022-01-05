@@ -1,6 +1,6 @@
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
-import { expose } from 'comlink';
+// import { expose } from 'comlink';
 
 export const api = {
   async processMarkdown(source: string): Promise<string> {
@@ -19,4 +19,4 @@ export const api = {
   },
 };
 
-expose(api);
+// expose(api);
