@@ -64,7 +64,7 @@
     "zx": "4.2.0"
   },
   "resolutions": {
-    "parse-entities": "3.0.0"
+    "parse-entities": "4.0.0"
   },
   "bundlesize": [
     {
