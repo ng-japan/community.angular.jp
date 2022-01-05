@@ -2276,10 +2276,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@testing-library/angular@10.11.0":
-  version "10.11.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-10.11.0.tgz#715a7cf1d05304d3bf0777e95857085f21508dc8"
-  integrity sha512-iTZjCBnn5jzKbStu31X80eLjOfpsoHam0BFH/zG3+Lk4xQtSeo/7TJtscMkTN2fGrAvlFjZyPjb6GnDGDAXc9g==
+"@testing-library/angular@11.0.2":
+  version "11.0.2"
+  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-11.0.2.tgz#268ca52a4881c7503915b2409fbcaefc873b9116"
+  integrity sha512-sqOD9MzTZ/sIXzCj5ogJm72x+iveWU+Q3vu2hZW5YC89YJV+M4w6PuBo0wgqpsyL4xnktVf41vNJcLMkajUjZw==
   dependencies:
     "@testing-library/dom" "^8.0.0"
     tslib "^2.0.0"
