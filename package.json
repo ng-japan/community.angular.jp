@@ -50,7 +50,7 @@
     "@typescript-eslint/parser": "5.3.0",
     "autoprefixer": "10.4.1",
     "eslint": "8.6.0",
-    "jest": "27.4.6",
+    "jest": "27.4.7",
     "jest-preset-angular": "11.0.1",
     "postcss": "8.4.5",
     "prettier": "2.4.1",
