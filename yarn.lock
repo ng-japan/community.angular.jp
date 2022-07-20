@@ -2336,13 +2336,13 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@testing-library/angular@11.0.2":
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-11.0.2.tgz#268ca52a4881c7503915b2409fbcaefc873b9116"
-  integrity sha512-sqOD9MzTZ/sIXzCj5ogJm72x+iveWU+Q3vu2hZW5YC89YJV+M4w6PuBo0wgqpsyL4xnktVf41vNJcLMkajUjZw==
+"@testing-library/angular@11.0.4":
+  version "11.0.4"
+  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-11.0.4.tgz#7585eb7828092fc8636f8fe021d03094a7115364"
+  integrity sha512-d/rGeVy/EMeGybPaXbsrOKE8VdJTP8V97S97mrFRPXjN1/Cg3eAzv+OAHMyD9oyRgwnRprJWWagvkk3ZCyrNjw==
   dependencies:
     "@testing-library/dom" "^8.0.0"
-    tslib "^2.0.0"
+    tslib "^2.3.1"
 
 "@testing-library/dom@^8.0.0":
   version "8.1.0"
@@ -10922,7 +10922,7 @@ tslib@2.3.1:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
-tslib@2.4.0:
+tslib@2.4.0, tslib@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
