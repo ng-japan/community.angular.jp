@@ -2,10 +2,10 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/spec",
-    "types": ["node", "jest"],
+    "types": ["node", "jasmine", "@testing-library/jasmine-dom"],
     "allowJs": true,
     "emitDecoratorMetadata": true
   },
-  "files": ["setup-jest.ts"],
+  "files": ["test.ts", "polyfills.ts"],
   "include": ["**/*.spec.ts", "**/*.d.ts"]
 }
