@@ -6,35 +6,26 @@ export const routes: Route[] = [
     path: '',
     pathMatch: 'full',
     component: HomePageComponent,
-    data: {},
   },
   {
     path: 'policy',
     loadChildren: () => import('./pages/policy/policy.module').then((m) => m.PolicyModule),
-    data: {
-      documentTitle: 'コミュニティポリシー',
-    },
+    title: 'コミュニティポリシー',
   },
   {
     path: 'local',
     loadChildren: () => import('./pages/local/local.module').then((m) => m.LocalModule),
-    data: {
-      documentTitle: 'ローカルコミュニティ',
-    },
+    title: 'ローカルコミュニティ',
   },
   {
     path: 'about',
     loadChildren: () => import('./pages/about/about.module').then((m) => m.AboutUsModule),
-    data: {
-      documentTitle: 'About',
-    },
+    title: 'About',
   },
   {
     path: 'learn',
     loadChildren: () => import('./pages/learn/learn.module').then((m) => m.LearnModule),
-    data: {
-      documentTitle: 'Angularを学ぶ',
-    },
+    title: 'Angularを学ぶ',
   },
   {
     path: '**',

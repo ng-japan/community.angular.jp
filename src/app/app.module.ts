@@ -5,6 +5,7 @@ import { RendererModule, TransferHttpCacheModule } from '@nguniversal/common/clo
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './pages/home/home.module';
+import { provideAppTitleStrategy } from './shared/app-title-strategy';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -20,7 +21,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     HomeModule,
   ],
-  providers: [],
+  providers: [provideAppTitleStrategy('Angular Japan User Group')],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
