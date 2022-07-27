@@ -6,8 +6,8 @@ import { MarkdownOutletComponent } from './markdown-outlet/markdown-outlet.compo
 import { NavListDirective, NavListItemDirective } from './nav-list/nav-list';
 
 @NgModule({
-  declarations: [CardComponent, MarkdownOutletComponent, NavListDirective, NavListItemDirective],
-  imports: [CommonModule],
+  declarations: [MarkdownOutletComponent, NavListDirective, NavListItemDirective],
+  imports: [CommonModule, CardComponent],
   exports: [CardComponent, MarkdownOutletComponent, NavListDirective, NavListItemDirective, IconsModule],
 })
 export class SharedModule {}
