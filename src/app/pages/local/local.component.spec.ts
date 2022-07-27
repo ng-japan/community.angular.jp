@@ -8,14 +8,12 @@ describe('LocalComponent', () => {
   let component: LocalPageComponent;
   let fixture: ComponentFixture<LocalPageComponent>;
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [LocalPageComponent],
-        imports: [SharedModule, HttpClientTestingModule],
-      }).compileComponents();
-    }),
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [LocalPageComponent],
+      imports: [SharedModule, HttpClientTestingModule],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LocalPageComponent);
