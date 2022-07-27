@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { PageTitleService } from './shared/page-title.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +11,8 @@ import { PageTitleService } from './shared/page-title.service';
     `,
   ],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   isMenuOpen = false;
-
-  constructor(private readonly pageTitleService: PageTitleService, private readonly titleService: Title) {}
-
-  ngOnInit() {
-    this.pageTitleService.titleChange$.subscribe((pageTitle) => this.titleService.setTitle(pageTitle));
-  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
