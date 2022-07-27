@@ -9,7 +9,7 @@ describe('NavListDirective', () => {
     const { getByTestId } = await render(`<div appNavList data-testid="TEST"></div>`, {
       declarations: [NavListDirective],
     });
-    expect(getByTestId('TEST')).toHaveClass('flex flex-col py-2');
+    expect(getByTestId('TEST')).toHaveClassName('flex', 'flex-col', 'py-2');
   });
 });
 
@@ -18,7 +18,15 @@ describe('NavListItemDirective', () => {
     const { getByTestId } = await render(`<div appNavListItem data-testid="TEST"></div>`, {
       declarations: [NavListItemDirective],
     });
-    expect(getByTestId('TEST')).toHaveClass('flex items-center h-12 px-4 no-underline text-black hover:bg-gray-100');
+    expect(getByTestId('TEST')).toHaveClassName(
+      'flex',
+      'items-center',
+      'h-12',
+      'px-4',
+      'no-underline',
+      'text-black',
+      'hover:bg-gray-100',
+    );
   });
 
   it('should change background color if active', async () => {
@@ -34,6 +42,6 @@ describe('NavListItemDirective', () => {
     (rla as any).isActive = true;
     detectChanges();
 
-    expect(getByTestId('TEST')).toHaveClass('bg-gray-100');
+    expect(getByTestId('TEST')).toHaveClassName('bg-gray-100');
   });
 });
