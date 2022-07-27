@@ -1,23 +1,40 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { render, screen } from '@testing-library/angular';
+import { IconsModule } from '../icons/icons.module';
 import { CardComponent } from './card.component';
 
 describe('CardComponent', () => {
-  let component: CardComponent;
-  let fixture: ComponentFixture<CardComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [CardComponent],
-    }).compileComponents();
+  it('should render content', async () => {
+    await render(`<app-card> test content </app-card>`, {
+      imports: [CardComponent],
+    });
+    expect(screen.getByText('test content')).toBeInTheDocument();
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('should render title', async () => {
+    await render(
+      `
+      <app-card>
+        <span card-title data-testid="title"> test title </span>
+        test content 
+      </app-card>`,
+      {
+        imports: [CardComponent],
+      },
+    );
+    expect(screen.getByTestId('title')).toBeInTheDocument();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render icon', async () => {
+    await render(
+      `
+      <app-card>
+        <app-icon-people card-icon data-testid="icon"></app-icon-people>
+        test content 
+      </app-card>`,
+      {
+        imports: [CardComponent, IconsModule],
+      },
+    );
+    expect(screen.getByTestId('icon')).toBeInTheDocument();
   });
 });
