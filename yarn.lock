@@ -2072,10 +2072,10 @@
     "@angular-devkit/schematics" "14.0.6"
     jsonc-parser "3.0.0"
 
-"@testing-library/angular@11.0.4":
-  version "11.0.4"
-  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-11.0.4.tgz#7585eb7828092fc8636f8fe021d03094a7115364"
-  integrity sha512-d/rGeVy/EMeGybPaXbsrOKE8VdJTP8V97S97mrFRPXjN1/Cg3eAzv+OAHMyD9oyRgwnRprJWWagvkk3ZCyrNjw==
+"@testing-library/angular@12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/angular/-/angular-12.1.0.tgz#fa7de3f51084902ef1f5c9101b6dd201118b7069"
+  integrity sha512-j1UB5BOTj7TwKl6dzbBSlNh/85GTIXpp4rYHwLj791DQMjYPgHBZhlK/4lsFWb7rOz+AydPwUeoPiI4nJcDK0g==
   dependencies:
     "@testing-library/dom" "^8.0.0"
     tslib "^2.3.1"
