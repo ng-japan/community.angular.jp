@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/angular';
-import { IconsModule } from '../icons';
+import { IconPeopleComponent } from '../icons/icon-people/icon-people.component';
 import { CardComponent } from './card.component';
 
 describe('CardComponent', () => {
@@ -32,7 +32,7 @@ describe('CardComponent', () => {
         test content 
       </app-card>`,
       {
-        imports: [CardComponent, IconsModule],
+        imports: [CardComponent, IconPeopleComponent],
       },
     );
     expect(screen.getByTestId('icon')).toBeInTheDocument();
