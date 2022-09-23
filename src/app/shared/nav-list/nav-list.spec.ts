@@ -7,7 +7,7 @@ import { NavListDirective, NavListItemDirective } from './nav-list';
 describe('NavListDirective', () => {
   it('should render', async () => {
     const { getByTestId } = await render(`<div appNavList data-testid="TEST"></div>`, {
-      declarations: [NavListDirective],
+      imports: [NavListDirective],
     });
     expect(getByTestId('TEST')).toHaveClassName('flex', 'flex-col', 'py-2');
   });
@@ -16,7 +16,7 @@ describe('NavListDirective', () => {
 describe('NavListItemDirective', () => {
   it('should render', async () => {
     const { getByTestId } = await render(`<div appNavListItem data-testid="TEST"></div>`, {
-      declarations: [NavListItemDirective],
+      imports: [NavListItemDirective],
     });
     expect(getByTestId('TEST')).toHaveClassName(
       'flex',
@@ -35,8 +35,7 @@ describe('NavListItemDirective', () => {
       detectChanges,
       fixture: { debugElement },
     } = await render(`<div appNavListItem data-testid="TEST" routerLink routerLinkActive></div>`, {
-      declarations: [NavListItemDirective],
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, NavListItemDirective],
     });
     const rla = debugElement.query(By.directive(RouterLinkActive)).injector.get(RouterLinkActive);
     (rla as any).isActive = true;

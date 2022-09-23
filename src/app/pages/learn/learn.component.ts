@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MarkdownOutletComponent } from '../../shared/markdown-outlet/markdown-outlet.component';
 
 @Component({
-  selector: 'app-learn',
-  templateUrl: './learn.component.html',
+  standalone: true,
+  imports: [MarkdownOutletComponent],
+  template: `<app-markdown-outlet src="content/learn-angular.md"></app-markdown-outlet> `,
   styles: [
     `
       :host {

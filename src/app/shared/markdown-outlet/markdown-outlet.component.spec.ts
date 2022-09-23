@@ -9,8 +9,7 @@ describe('MarkdownOutletComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MarkdownOutletComponent],
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, MarkdownOutletComponent],
     }).compileComponents();
   });
 
