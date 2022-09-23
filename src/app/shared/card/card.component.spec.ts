@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/angular';
-import { IconsModule } from '../icons/icons.module';
+import { IconsModule } from '../icons';
 import { CardComponent } from './card.component';
 
 describe('CardComponent', () => {

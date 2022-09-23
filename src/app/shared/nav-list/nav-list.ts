@@ -4,6 +4,7 @@ import { RouterLinkActive } from '@angular/router';
 @Directive({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: '[appNavListItem]',
+  standalone: true,
   // eslint-disable-next-line @angular-eslint/no-host-metadata-property
   host: {
     class: 'flex items-center h-12 px-4 no-underline text-black hover:bg-gray-100',
@@ -21,9 +22,12 @@ export class NavListItemDirective {
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[appNavList]',
+  standalone: true,
   // eslint-disable-next-line @angular-eslint/no-host-metadata-property
   host: {
     class: 'flex flex-col py-2',
   },
 })
 export class NavListDirective {}
+
+export const NAV_LIST_DIRECTIVES = [NavListItemDirective, NavListDirective];

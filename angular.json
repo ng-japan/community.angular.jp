@@ -106,7 +106,7 @@
           "builder": "@nguniversal/builders:static-generator",
           "options": {
             "browserTarget": "app:build:production",
-            "guessRoutes": true
+            "routes": ["/", "/about", "/policy", "/local", "/learn"]
           }
         }
       }
