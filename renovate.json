@@ -1,5 +1,6 @@
 {
   "extends": ["config:base", "github>lacolaco/renovate-config:default", "github>lacolaco/renovate-config:ng-update"],
+  "postUpdateOptions": ["yarnDedupeHighest"],
   "packageRules": [
     {
       "groupName": "@nguniversal packages",
