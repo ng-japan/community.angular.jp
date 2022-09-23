@@ -42,7 +42,7 @@
     "@angular/compiler-cli": "14.2.3",
     "@angular/language-service": "14.2.3",
     "@nguniversal/builders": "14.2.0",
-    "@testing-library/angular": "12.1.0",
+    "@testing-library/angular": "12.1.2",
     "@testing-library/jasmine-dom": "1.2.0",
     "@types/jasmine": "4.0.3",
     "@types/node": "16.11.47",
