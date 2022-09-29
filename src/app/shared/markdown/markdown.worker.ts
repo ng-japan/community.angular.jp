@@ -6,6 +6,7 @@ export const api = {
   async processMarkdown(source: string): Promise<string> {
     return remark()
       .use(remarkHtml, {
+        sanitize: false,
         handlers: {
           link: (h, node) => {
             const { url, children } = node as unknown as { url: string; children: any[] };
