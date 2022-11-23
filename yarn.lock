@@ -1483,14 +1483,14 @@
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-14.2.3.tgz#ce693ebaff5844f86ef2e93cd84c9710dc886e0a"
   integrity sha512-/9bOlmpx7a5P8QhjmggxEJ6LX5qvfkBZhxM8Orjr6ZjJcmAfm+3wiUDzU3EM+5M0YV3y3+dvQpn6Jrwy9y4rfQ==
 
-"@nguniversal/builders@14.2.0":
-  version "14.2.0"
-  resolved "https://registry.yarnpkg.com/@nguniversal/builders/-/builders-14.2.0.tgz#8b0303fd615a0383304a1a6b437c6587116dd224"
-  integrity sha512-7rElvsL1OdLtYmn1zNwijga21KhDtjkhuM2o2Mwqafiud3a4zfxzmdv/hOAvFapVTlpUYgb+m4pBwq7V4DYiUA==
+"@nguniversal/builders@14.2.3":
+  version "14.2.3"
+  resolved "https://registry.yarnpkg.com/@nguniversal/builders/-/builders-14.2.3.tgz#e56c65578718a26b4af1f46ce3a9143f3d0b89f6"
+  integrity sha512-4WpQ5zMfw4BIH/2ymWchFm2bbN8w0/sC0Rg3IracJ9ESsfTJMaIg8CzVer6NBqC+5As9iLZwau7nrfzt7sQf1A==
   dependencies:
     "@angular-devkit/architect" "^0.1402.0"
     "@angular-devkit/core" "^14.2.0"
-    "@nguniversal/common" "14.2.0"
+    "@nguniversal/common" "14.2.3"
     browser-sync "^2.26.7"
     express "^4.17.1"
     guess-parser "^0.4.12"
@@ -1500,10 +1500,10 @@
     rxjs "^6.5.5"
     tree-kill "^1.2.2"
 
-"@nguniversal/common@14.2.0":
-  version "14.2.0"
-  resolved "https://registry.yarnpkg.com/@nguniversal/common/-/common-14.2.0.tgz#03ba2a9f23465b978eb408e10cdcf445e9276820"
-  integrity sha512-6dpPSpCo6Kz4OrFa0RRFu8kmR6QDAEhwgTjD2MNU+WVf5ngwBAcakxW5/3bIx6A17et+Zr1/EVyhpyXFYSUjhw==
+"@nguniversal/common@14.2.3":
+  version "14.2.3"
+  resolved "https://registry.yarnpkg.com/@nguniversal/common/-/common-14.2.3.tgz#69ecc7a6c576e1efa6733d565a5906757ec8d424"
+  integrity sha512-FWoZY+DZCNw24tNnnWkgTpNAlshkfiaxiT7V+fx2WFpY0LNXLWk45+hWhl4+wFEknOXr/DT/oU1m/RjR6FgXZQ==
   dependencies:
     critters "0.0.16"
     jsdom "20.0.0"
