@@ -51,5 +51,5 @@
   - 書籍やオンライン講座などの英語コンテンツを探すのに便利です。
 - [Angular inDepth](https://indepth.dev/angular)（英語）
   - 応用的な深い内容の記事が多いコミュニティブログ
-- [How to use Materialize CSS in Angular application（英語）](https://coderjony.com/blogs/how-to-use-materialize-css-in-angular-application)
+- [How to use Materialize CSS in Angular application](https://coderjony.com/blogs/how-to-use-materialize-css-in-angular-application)（英語）
   - Materialize CSS をプロジェクトに追加する方法に関する短いチュートリアル
