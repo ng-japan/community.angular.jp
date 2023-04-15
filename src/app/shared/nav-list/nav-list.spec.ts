@@ -30,17 +30,21 @@ describe('NavListItemDirective', () => {
   });
 
   it('should change background color if active', async () => {
-    const {
-      getByTestId,
-      detectChanges,
-      fixture: { debugElement },
-    } = await render(`<div appNavListItem data-testid="TEST" routerLink routerLinkActive></div>`, {
-      imports: [RouterTestingModule, NavListItemDirective],
-    });
-    const rla = debugElement.query(By.directive(RouterLinkActive)).injector.get(RouterLinkActive);
-    (rla as any).isActive = true;
+    const { getByTestId, detectChanges } = await render(
+      `<div appNavListItem data-testid="TEST" routerLink routerLinkActive></div>`,
+      {
+        imports: [RouterTestingModule, NavListItemDirective],
+        componentProviders: [
+          {
+            provide: RouterLinkActive,
+            useValue: {
+              isActive: true,
+            },
+          },
+        ],
+      },
+    );
     detectChanges();
-
     expect(getByTestId('TEST')).toHaveClassName('bg-gray-100');
   });
 });

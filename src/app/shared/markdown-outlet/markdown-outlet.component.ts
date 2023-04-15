@@ -1,6 +1,6 @@
 import { AsyncPipe } from '@angular/common';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { from, of, ReplaySubject } from 'rxjs';
 import { catchError, filter, map, switchMap } from 'rxjs/operators';
@@ -13,7 +13,6 @@ import { processMarkdown } from '../markdown';
   template: `<div class="content-root" [innerHTML]="html$ | async"></div> `,
   styleUrls: ['./markdown-outlet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
   // eslint-disable-next-line @angular-eslint/no-host-metadata-property
   host: {
     class: 'markdown-outlet',
