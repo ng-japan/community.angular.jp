@@ -49,7 +49,7 @@
     "@typescript-eslint/parser": "^5.43.0",
     "autoprefixer": "10.4.14",
     "eslint": "^8.28.0",
-    "jasmine-core": "4.5.0",
+    "jasmine-core": "4.6.0",
     "karma": "6.4.1",
     "karma-chrome-launcher": "3.1.1",
     "karma-coverage": "2.2.0",
