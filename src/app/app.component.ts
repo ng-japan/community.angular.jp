@@ -5,8 +5,6 @@ import { NAV_LIST_DIRECTIVES } from './shared/nav-list/nav-list';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterModule, NAV_LIST_DIRECTIVES, ICON_COMPONENTS],
   templateUrl: './app.component.html',
   styles: [
     `
