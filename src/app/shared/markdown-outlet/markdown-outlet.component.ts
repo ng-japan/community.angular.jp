@@ -1,16 +1,14 @@
-import { AsyncPipe } from '@angular/common';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Input, computed, effect, inject, signal } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { from, of, ReplaySubject } from 'rxjs';
-import { catchError, filter, map, switchMap } from 'rxjs/operators';
+import { ContentResolver } from '../content-resolver';
 import { processMarkdown } from '../markdown';
 
 @Component({
   selector: 'app-markdown-outlet',
   standalone: true,
-  imports: [AsyncPipe],
-  template: `<div class="content-root" [innerHTML]="html$ | async"></div> `,
+  imports: [CommonModule],
+  template: `<div *ngIf="contentHTML() as html" class="content-root" [innerHTML]="html"></div> `,
   styleUrls: ['./markdown-outlet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   // eslint-disable-next-line @angular-eslint/no-host-metadata-property
@@ -19,23 +17,29 @@ import { processMarkdown } from '../markdown';
   },
 })
 export class MarkdownOutletComponent {
+  readonly #contentResolver = inject(ContentResolver);
+  readonly #sanitizer = inject(DomSanitizer);
+  readonly #sourceURL = signal<string | null>(null);
+  readonly #rendered = signal<string | null>(null);
+  readonly contentHTML = computed(() => {
+    const rendered = this.#rendered();
+    if (!rendered) return null;
+    return this.#sanitizer.bypassSecurityTrustHtml(rendered);
+  });
+
   @Input()
   set src(value: string) {
-    this.markdownSource$.next(value);
+    this.#sourceURL.set(value);
   }
 
-  private readonly markdownSource$ = new ReplaySubject<string>(1);
+  constructor() {
+    effect(async () => {
+      const source = this.#sourceURL();
+      if (!source) return;
 
-  readonly html$ = this.markdownSource$.pipe(
-    filter((value) => value != null),
-    switchMap((source) =>
-      this.httpClient
-        .get(source, { responseType: 'text' })
-        .pipe(catchError((error: HttpErrorResponse) => of(error.message))),
-    ),
-    switchMap((markdown) => from(processMarkdown(markdown))),
-    map((html) => this.sanitizer.bypassSecurityTrustHtml(html)),
-  );
-
-  constructor(private readonly sanitizer: DomSanitizer, private httpClient: HttpClient) {}
+      const markdown = await this.#contentResolver.get(source);
+      const html = await processMarkdown(markdown);
+      this.#rendered.set(html);
+    });
+  }
 }

@@ -1,4 +1,4 @@
-import { Directive, Host, Optional } from '@angular/core';
+import { Directive, inject } from '@angular/core';
 import { RouterLinkActive } from '@angular/router';
 
 @Directive({
@@ -12,11 +12,11 @@ import { RouterLinkActive } from '@angular/router';
   },
 })
 export class NavListItemDirective {
+  readonly routerLinkActive = inject(RouterLinkActive, { optional: true, host: true });
+
   get active(): boolean {
     return this.routerLinkActive?.isActive ?? false;
   }
-
-  constructor(@Optional() @Host() private routerLinkActive: RouterLinkActive) {}
 }
 
 @Directive({
@@ -30,4 +30,4 @@ export class NavListItemDirective {
 })
 export class NavListDirective {}
 
-export const NAV_LIST_DIRECTIVES = [NavListItemDirective, NavListDirective];
+export const NAV_LIST_DIRECTIVES = [NavListItemDirective, NavListDirective] as const;

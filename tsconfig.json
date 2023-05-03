@@ -14,8 +14,6 @@
     "target": "ES2022",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {

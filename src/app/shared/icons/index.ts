@@ -14,4 +14,4 @@ export const ICON_COMPONENTS = [
   IconOnlineComponent,
   IconBookComponent,
   IconHomeComponent,
-];
+] as const;

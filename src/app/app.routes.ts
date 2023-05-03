@@ -1,8 +1,8 @@
 import { Route } from '@angular/router';
 import { HomePageComponent } from './pages/home/home.component';
-import { provideMarkdownPage } from './pages/markdown/markdown-page.component';
+import { MarkdownPageComponent, provideMarkdownPage } from './pages/markdown/markdown-page.component';
 
-const markdownPages = [
+export const markdownPages = [
   {
     path: 'about',
     src: 'content/about.md',
@@ -23,7 +23,7 @@ const markdownPages = [
     src: 'content/learn-angular.md',
     title: 'Angularを学ぶ',
   },
-];
+] as const;
 
 export const routes: Route[] = [
   {
@@ -33,7 +33,7 @@ export const routes: Route[] = [
   },
   ...markdownPages.map((page) => ({
     path: page.path,
-    loadComponent: () => import('./pages/markdown/markdown-page.component').then((m) => m.MarkdownPageComponent),
+    component: MarkdownPageComponent,
     providers: [provideMarkdownPage(page.src)],
     title: page.title,
   })),

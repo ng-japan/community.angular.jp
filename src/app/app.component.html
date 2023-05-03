@@ -18,13 +18,13 @@
     <!-- backdrop -->
     <div
       class="w-full h-full absolute inset-y-0 left-0 bg-black opacity-60"
-      [class.hidden]="!isMenuOpen"
+      [class.hidden]="!isMenuOpen()"
       (click)="closeMenu()"
     ></div>
     <!-- sidenav -->
     <div
       class="bg-white shadow z-10 w-64 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out"
-      [class.-translate-x-full]="!isMenuOpen"
+      [class.-translate-x-full]="!isMenuOpen()"
     >
       <nav appNavList (click)="closeMenu()">
         <a appNavListItem routerLink="/" routerLinkActive [routerLinkActiveOptions]="{ exact: true }"> トップ </a>
