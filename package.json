@@ -14,6 +14,9 @@
     "build:ssr": "ng build && ng run app:server",
     "prerender": "ng run app:prerender"
   },
+  "engines": {
+    "node": "18"
+  },
   "dependencies": {
     "@angular/animations": "16.0.0-rc.4",
     "@angular/cdk": "16.0.0-rc.2",
