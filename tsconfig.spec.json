@@ -1,11 +1,11 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "./tsconfig.app.json",
   "compilerOptions": {
     "outDir": "../out-tsc/spec",
     "types": ["node", "jasmine", "@testing-library/jasmine-dom"],
     "allowJs": true,
     "emitDecoratorMetadata": true
   },
-  "files": ["test.ts", "polyfills.ts"],
+  "files": ["src/test.ts", "src/polyfills.ts"],
   "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

@@ -1,27 +1,24 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ICON_COMPONENTS } from './shared/icons';
 import { NAV_LIST_DIRECTIVES } from './shared/nav-list/nav-list';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterModule, NAV_LIST_DIRECTIVES, ICON_COMPONENTS],
   templateUrl: './app.component.html',
-  styles: [
-    `
-      :host {
-        display: block;
-      }
-    `,
-  ],
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  isMenuOpen = false;
+  isMenuOpen = signal(false);
 
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+    this.isMenuOpen.update((isOpen) => !isOpen);
   }
 
   closeMenu() {
-    this.isMenuOpen = false;
+    this.isMenuOpen.set(false);
   }
 }
