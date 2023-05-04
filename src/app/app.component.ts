@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, VERSION } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ICON_COMPONENTS } from './shared/icons';
 import { NAV_LIST_DIRECTIVES } from './shared/nav-list/nav-list';
@@ -12,7 +12,8 @@ import { NAV_LIST_DIRECTIVES } from './shared/nav-list/nav-list';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  isMenuOpen = signal(false);
+  readonly ngVersion = VERSION.full;
+  readonly isMenuOpen = signal(false);
 
   toggleMenu() {
     this.isMenuOpen.update((isOpen) => !isOpen);
