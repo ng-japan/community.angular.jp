@@ -1,6 +1,8 @@
 {
-  "extends": ["config:base", "github>lacolaco/renovate-config:default", "github>lacolaco/renovate-config:ng-update"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", "schedule:weekly"],
   "postUpdateOptions": ["yarnDedupeHighest"],
+  "prConcurrentLimit": 5,
   "packageRules": [
     {
       "groupName": "@nguniversal packages",
