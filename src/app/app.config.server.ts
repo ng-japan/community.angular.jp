@@ -1,8 +1,7 @@
 import { ApplicationConfig, mergeApplicationConfig } from '@angular/core';
-import { BEFORE_APP_SERIALIZED, provideServerRendering } from '@angular/platform-server';
+import { provideServerRendering } from '@angular/platform-server';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { setTimeout } from 'node:timers/promises';
 import { appConfig } from './app.config';
 import { markdownPages } from './app.routes';
 import { provideContentCache } from './shared/content-resolver';
@@ -17,16 +16,7 @@ function createContentCache() {
 }
 
 const serverConfig: ApplicationConfig = {
-  providers: [
-    provideServerRendering(),
-    provideContentCache(createContentCache()),
-    {
-      provide: BEFORE_APP_SERIALIZED,
-      multi: true,
-      // wait for markdown-outlet rendering
-      useFactory: () => () => setTimeout(1000),
-    },
-  ],
+  providers: [provideServerRendering(), provideContentCache(createContentCache())],
 };
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);
