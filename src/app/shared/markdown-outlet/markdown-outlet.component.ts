@@ -1,13 +1,16 @@
-import { ChangeDetectionStrategy, Component, Input, computed, effect, inject, signal } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Input, inject, signal } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { DomSanitizer } from '@angular/platform-browser';
+import { map, switchMap } from 'rxjs';
 import { processMarkdown } from '../markdown';
 
 @Component({
   selector: 'app-markdown-outlet',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe],
   template: `
-    @if (contentHTML(); as html) {
+    @if (rendered$ | async; as html) {
     <div class="content-root" [innerHTML]="html"></div>
     }
   `,
@@ -21,25 +24,13 @@ import { processMarkdown } from '../markdown';
 export class MarkdownOutletComponent {
   readonly #sanitizer = inject(DomSanitizer);
   readonly #content = signal<string | null>(null);
-  readonly #rendered = signal<string | null>(null);
-  readonly contentHTML = computed(() => {
-    const rendered = this.#rendered();
-    if (!rendered) return null;
-    return this.#sanitizer.bypassSecurityTrustHtml(rendered);
-  });
+  readonly rendered$ = toObservable(this.#content).pipe(
+    switchMap((content) => processMarkdown(content ?? '')),
+    map((html) => this.#sanitizer.bypassSecurityTrustHtml(html)),
+  );
 
   @Input()
   set content(value: string) {
     this.#content.set(value);
-  }
-
-  constructor() {
-    effect(async () => {
-      const content = this.#content();
-      if (!content) return;
-
-      const html = await processMarkdown(content);
-      this.#rendered.set(html);
-    });
   }
 }

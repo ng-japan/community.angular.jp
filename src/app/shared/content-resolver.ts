@@ -23,9 +23,9 @@ export class ContentResolver {
       return this.#contentCache[url];
     }
 
-    const content = await firstValueFrom(
-      this.#httpClient.get(url, { responseType: 'text', params: { foo: 'foo' } }),
-    ).catch((e: HttpErrorResponse) => `${e.message}`);
+    const content = await firstValueFrom(this.#httpClient.get(url, { responseType: 'text' })).catch(
+      (e: HttpErrorResponse) => `${e.message}`,
+    );
     return content;
   }
 }
