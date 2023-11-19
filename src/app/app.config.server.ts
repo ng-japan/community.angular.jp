@@ -1,8 +1,9 @@
-import { ApplicationConfig, mergeApplicationConfig } from '@angular/core';
+import { ApplicationConfig, NgZone, inject, mergeApplicationConfig } from '@angular/core';
 import { BEFORE_APP_SERIALIZED, provideServerRendering } from '@angular/platform-server';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { setTimeout } from 'node:timers/promises';
+import { firstValueFrom } from 'rxjs';
 import { appConfig } from './app.config';
 import { markdownPages } from './app.routes';
 import { provideContentCache } from './shared/content-resolver';
@@ -23,8 +24,17 @@ const serverConfig: ApplicationConfig = {
     {
       provide: BEFORE_APP_SERIALIZED,
       multi: true,
-      // wait for markdown-outlet rendering
-      useFactory: () => () => setTimeout(1000),
+      useFactory: () => {
+        const ngZone = inject(NgZone);
+        return async () => {
+          // wait for markdown-outlet rendering
+          await setTimeout(1000);
+          if (ngZone.isStable) {
+            return;
+          }
+          await firstValueFrom(ngZone.onStable);
+        };
+      },
     },
   ],
 };

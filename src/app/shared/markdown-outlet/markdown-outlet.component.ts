@@ -1,14 +1,19 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, computed, effect, inject, signal } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Input, inject, signal } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ContentResolver } from '../content-resolver';
+import { map, switchMap } from 'rxjs';
 import { processMarkdown } from '../markdown';
 
 @Component({
   selector: 'app-markdown-outlet',
   standalone: true,
-  imports: [CommonModule],
-  template: `<div *ngIf="contentHTML() as html" class="content-root" [innerHTML]="html"></div> `,
+  imports: [AsyncPipe],
+  template: `
+    @if (rendered$ | async; as html) {
+    <div class="content-root" [innerHTML]="html"></div>
+    }
+  `,
   styleUrls: ['./markdown-outlet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   // eslint-disable-next-line @angular-eslint/no-host-metadata-property
@@ -17,29 +22,15 @@ import { processMarkdown } from '../markdown';
   },
 })
 export class MarkdownOutletComponent {
-  readonly #contentResolver = inject(ContentResolver);
   readonly #sanitizer = inject(DomSanitizer);
-  readonly #sourceURL = signal<string | null>(null);
-  readonly #rendered = signal<string | null>(null);
-  readonly contentHTML = computed(() => {
-    const rendered = this.#rendered();
-    if (!rendered) return null;
-    return this.#sanitizer.bypassSecurityTrustHtml(rendered);
-  });
+  readonly #content = signal<string | null>(null);
+  readonly rendered$ = toObservable(this.#content).pipe(
+    switchMap((content) => processMarkdown(content ?? '')),
+    map((html) => this.#sanitizer.bypassSecurityTrustHtml(html)),
+  );
 
   @Input()
-  set src(value: string) {
-    this.#sourceURL.set(value);
-  }
-
-  constructor() {
-    effect(async () => {
-      const source = this.#sourceURL();
-      if (!source) return;
-
-      const markdown = await this.#contentResolver.get(source);
-      const html = await processMarkdown(markdown);
-      this.#rendered.set(html);
-    });
+  set content(value: string) {
+    this.#content.set(value);
   }
 }

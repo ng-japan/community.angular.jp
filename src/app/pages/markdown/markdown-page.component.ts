@@ -1,19 +1,10 @@
-import { Component, ChangeDetectionStrategy, InjectionToken, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MarkdownOutletComponent } from '../../shared/markdown-outlet/markdown-outlet.component';
-
-const MARKDOWN_PAGE_SOURCE = new InjectionToken<string>('MARKDOWN_PAGE_SOURCE');
-
-export function provideMarkdownPage(src: string) {
-  return {
-    provide: MARKDOWN_PAGE_SOURCE,
-    useValue: src,
-  };
-}
 
 @Component({
   standalone: true,
   imports: [MarkdownOutletComponent],
-  template: `<app-markdown-outlet class="h-full" [src]="source"></app-markdown-outlet> `,
+  template: `<app-markdown-outlet class="h-full" [content]="content" />`,
   styles: [
     `
       :host {
@@ -24,5 +15,6 @@ export function provideMarkdownPage(src: string) {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MarkdownPageComponent {
-  readonly source = inject(MARKDOWN_PAGE_SOURCE);
+  @Input({ required: true })
+  readonly content!: string;
 }

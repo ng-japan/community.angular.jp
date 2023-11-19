@@ -18,12 +18,12 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app/browser",
+            "outputPath": "dist/app",
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "browser": "src/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "webWorkerTsConfig": "tsconfig.worker.json",
             "assets": [
@@ -36,7 +36,12 @@
               }
             ],
             "styles": ["src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": {
+              "discoverRoutes": false,
+              "routesFile": "prerender-routes.txt"
+            }
           },
           "configurations": {
             "production": {
@@ -55,9 +60,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "vendorChunk": true,
               "extractLicenses": false,
-              "buildOptimizer": false,
               "sourceMap": true,
               "optimization": false,
               "namedChunks": true
@@ -70,10 +73,10 @@
           "options": {},
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "buildTarget": "app:build:production"
             },
             "development": {
-              "browserTarget": "app:build:development"
+              "buildTarget": "app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,14 +84,14 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app:build"
+            "buildTarget": "app:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
@@ -101,65 +104,6 @@
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/app/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "app:build:development",
-              "serverTarget": "app:server:development"
-            },
-            "production": {
-              "browserTarget": "app:build:production",
-              "serverTarget": "app:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "guessRoutes": false,
-            "routes": ["/", "/about", "/policy", "/learn", "/local"]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "app:build:production",
-              "serverTarget": "app:server:production"
-            },
-            "development": {
-              "browserTarget": "app:build:development",
-              "serverTarget": "app:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }
