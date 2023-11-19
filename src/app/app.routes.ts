@@ -1,6 +1,8 @@
+import { inject } from '@angular/core';
 import { Route } from '@angular/router';
 import { HomePageComponent } from './pages/home/home.component';
-import { MarkdownPageComponent, provideMarkdownPage } from './pages/markdown/markdown-page.component';
+import { MarkdownPageComponent } from './pages/markdown/markdown-page.component';
+import { ContentResolver } from './shared/content-resolver';
 
 export const markdownPages = [
   {
@@ -34,8 +36,12 @@ export const routes: Route[] = [
   ...markdownPages.map((page) => ({
     path: page.path,
     component: MarkdownPageComponent,
-    providers: [provideMarkdownPage(page.src)],
-    title: page.title,
+    resolve: {
+      content: () => {
+        const contentResolver = inject(ContentResolver);
+        return contentResolver.get(page.src);
+      },
+    },
   })),
   {
     path: '**',

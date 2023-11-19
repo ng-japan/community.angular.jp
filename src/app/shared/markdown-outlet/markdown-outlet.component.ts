@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, computed, effect, inject, signal } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ContentResolver } from '../content-resolver';
 import { processMarkdown } from '../markdown';
 
 @Component({
@@ -20,9 +19,8 @@ import { processMarkdown } from '../markdown';
   },
 })
 export class MarkdownOutletComponent {
-  readonly #contentResolver = inject(ContentResolver);
   readonly #sanitizer = inject(DomSanitizer);
-  readonly #sourceURL = signal<string | null>(null);
+  readonly #content = signal<string | null>(null);
   readonly #rendered = signal<string | null>(null);
   readonly contentHTML = computed(() => {
     const rendered = this.#rendered();
@@ -31,17 +29,16 @@ export class MarkdownOutletComponent {
   });
 
   @Input()
-  set src(value: string) {
-    this.#sourceURL.set(value);
+  set content(value: string) {
+    this.#content.set(value);
   }
 
   constructor() {
     effect(async () => {
-      const source = this.#sourceURL();
-      if (!source) return;
+      const content = this.#content();
+      if (!content) return;
 
-      const markdown = await this.#contentResolver.get(source);
-      const html = await processMarkdown(markdown);
+      const html = await processMarkdown(content);
       this.#rendered.set(html);
     });
   }
