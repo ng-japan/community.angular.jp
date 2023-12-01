@@ -4,7 +4,7 @@ import { MarkdownOutletComponent } from '../../shared/markdown-outlet/markdown-o
 @Component({
   standalone: true,
   imports: [MarkdownOutletComponent],
-  template: `<app-markdown-outlet class="h-full" [content]="content" />`,
+  template: `<app-markdown-outlet class="h-full" [content]="content" ngSkipHydration />`,
   styles: [
     `
       :host {
