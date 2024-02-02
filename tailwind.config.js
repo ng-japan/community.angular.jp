@@ -1,7 +1,10 @@
+/**
+ * @type {import('tailwindcss').Config}
+ */
 module.exports = {
   prefix: '',
   mode: 'jit',
-  content: ['./src/**/*.{html,ts,css,scss,sass,less,styl}'],
+  content: ['./src/**/*.{html,ts,css,scss,sass,less,styl,md}'],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {

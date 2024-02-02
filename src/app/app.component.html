@@ -1,12 +1,12 @@
 <div class="h-screen flex flex-col">
   <header>
-    <div class="flex flex-row items-center justify-between h-14 lg:h-16 px-4 bg-primary text-white">
-      <span class="text-xl font-semibold">Angular Japan User Group</span>
+    <div class="flex flex-row items-center justify-between h-14 lg:h-16 px-4 text-gray-500 md:hidden">
+      <span class="text-xl">Angular Japan User Group</span>
 
       <button
         aria-label="open menu"
         aria-haspopup="menu"
-        class="flex items-center justify-center w-10 h-10 rounded focus:ring md:hidden"
+        class="flex items-center justify-center w-10 h-10 rounded focus:ring"
         (click)="toggleMenu()"
       >
         <app-icon-menu></app-icon-menu>
@@ -26,8 +26,11 @@
       class="bg-white shadow z-10 w-64 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out"
       [class.-translate-x-full]="!isMenuOpen()"
     >
+      <div class="flex justify-center pt-2">
+        <img src="/assets/image/logo.svg" class="w-12" width="96" height="96" alt="ng-japan" />
+      </div>
       <nav appNavList (click)="closeMenu()">
-        <a appNavListItem routerLink="/" routerLinkActive [routerLinkActiveOptions]="{ exact: true }"> トップ </a>
+        <a appNavListItem routerLink="/" routerLinkActive [routerLinkActiveOptions]="{ exact: true }">トップ</a>
         <a appNavListItem [routerLink]="'/policy'" routerLinkActive>コミュニティポリシー</a>
         <a appNavListItem [routerLink]="'/local'" routerLinkActive>ローカルコミュニティ</a>
         <a appNavListItem [routerLink]="'/learn'" routerLinkActive>Angularを学ぶ</a>

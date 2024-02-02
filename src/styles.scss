@@ -13,19 +13,19 @@
     @apply flex flex-col;
 
     > h1 {
-      @apply font-bold text-3xl py-4;
+      @apply font-semibold text-3xl py-4;
     }
     > h2 {
       @apply text-xl py-4 mt-4 border-t-2;
     }
     > h3 {
-      @apply font-bold text-lg py-2;
+      @apply font-semibold text-lg py-2 mt-2;
     }
     > p {
-      @apply py-1;
+      @apply mt-2;
     }
     ul {
-      @apply list-inside;
+      @apply list-inside mt-2;
       list-style-type: disc;
 
       li {
@@ -37,6 +37,9 @@
         @apply pl-4 md:pl-8;
         list-style-type: circle;
       }
+    }
+    > blockquote {
+      @apply border-l-4 border-gray-300 text-gray-700 pl-4 py-2 mt-3 italic;
     }
   }
 }
