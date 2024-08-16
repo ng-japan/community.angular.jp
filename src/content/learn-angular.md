@@ -8,10 +8,9 @@
 
 ### Google コンテンツ
 
-- [angular.io](https://angular.io) Angular 公式ドキュメント（英語）
+- [angular.dev](https://angular.dev) Angular 公式ドキュメント（英語）
   - [angular.jp](https://angular.jp) 日本語版
-  - [クイックスタート](https://angular.jp/start)
-  - [チュートリアル](https://angular.jp/tutorial)
+  - [チュートリアル](https://angular.jp/tutorials/learn-angular)
 - [web.dev/angular](https://web.dev/angular/)（英語）
   - パフォーマンス改善や Progressive Web App 対応などのテクニックが紹介されています。
 - コードラボ
@@ -47,7 +46,5 @@
 
 ## 中級者向け
 
-- [angular.io/resources](https://angular.io/resources?category=education)（英語）
-  - 書籍やオンライン講座などの英語コンテンツを探すのに便利です。
 - [Angular inDepth](https://indepth.dev/angular)（英語）
   - 応用的な深い内容の記事が多いコミュニティブログ
