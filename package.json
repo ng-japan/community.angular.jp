@@ -26,7 +26,7 @@
     "@angular/router": "18.2.0",
     "@angular/ssr": "^18.2.0",
     "comlink": "4.4.1",
-    "express": "^4.15.2",
+    "express": "^4.20.0",
     "remark": "14.0.3",
     "remark-html": "15.0.2",
     "rxjs": "^7.8.1",
