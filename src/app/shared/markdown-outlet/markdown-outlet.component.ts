@@ -7,7 +7,6 @@ import { processMarkdown } from '../markdown';
 
 @Component({
   selector: 'app-markdown-outlet',
-  standalone: true,
   imports: [AsyncPipe],
   template: `
     @if (rendered$ | async; as html) {

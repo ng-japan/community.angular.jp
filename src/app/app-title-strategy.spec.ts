@@ -39,5 +39,8 @@ describe('AppTitleStrategy', () => {
   });
 });
 
-@Component({ template: '' })
+@Component({
+  template: '',
+  standalone: false,
+})
 class TestPageComponent {}

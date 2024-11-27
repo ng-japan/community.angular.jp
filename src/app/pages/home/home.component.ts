@@ -4,7 +4,6 @@ import { CardComponent } from '../../shared/card/card.component';
 import { ICON_COMPONENTS } from '../../shared/icons';
 
 @Component({
-  standalone: true,
   imports: [RouterLink, CardComponent, ICON_COMPONENTS],
   templateUrl: './home.component.html',
   styles: [

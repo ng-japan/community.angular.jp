@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MarkdownOutletComponent } from '../../shared/markdown-outlet/markdown-outlet.component';
 
 @Component({
-  standalone: true,
   imports: [MarkdownOutletComponent],
   template: `<app-markdown-outlet class="h-full" [content]="content" ngSkipHydration />`,
   styles: [
