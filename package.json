@@ -25,7 +25,7 @@
     "@angular/platform-server": "18.2.0",
     "@angular/router": "18.2.0",
     "@angular/ssr": "^18.2.0",
-    "comlink": "4.4.1",
+    "comlink": "4.4.2",
     "express": "^4.15.2",
     "remark": "14.0.3",
     "remark-html": "15.0.2",
