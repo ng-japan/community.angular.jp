@@ -1,18 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "schedule:weekly"],
+  "extends": ["config:recommended", "schedule:weekly"],
   "postUpdateOptions": ["yarnDedupeHighest"],
   "prConcurrentLimit": 5,
   "packageRules": [
     {
       "groupName": "@nguniversal packages",
-      "matchPackagePatterns": ["^@nguniversal/"]
+      "matchPackageNames": ["/^@nguniversal//"]
     },
     {
       "groupName": "@types packages",
       "description": "types packages are updated automatically",
-      "matchPackagePatterns": ["^@types/"],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/^@types//"]
     }
   ]
 }
