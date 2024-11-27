@@ -7,6 +7,12 @@
     {
       "groupName": "@nguniversal packages",
       "matchPackagePatterns": ["^@nguniversal/"]
+    },
+    {
+      "groupName": "@types packages",
+      "description": "types packages are updated automatically",
+      "matchPackagePatterns": ["^@types/"],
+      "automerge": true
     }
   ]
 }
