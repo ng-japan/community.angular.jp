@@ -5,6 +5,18 @@
   "prConcurrentLimit": 5,
   "packageRules": [
     {
+      "description": "ng update will handle these",
+      "matchPackageNames": ["/^@angular//"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "description": "ng update will handle these",
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
+    },
+    {
       "groupName": "@nguniversal packages",
       "matchPackageNames": ["/^@nguniversal//"]
     },
