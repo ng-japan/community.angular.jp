@@ -6,13 +6,11 @@ import { ICON_COMPONENTS } from '../../shared/icons';
 @Component({
   imports: [RouterLink, CardComponent, ICON_COMPONENTS],
   templateUrl: './home.component.html',
-  styles: [
-    `
+  styles: `
       :host {
         display: block;
       }
     `,
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent {}
