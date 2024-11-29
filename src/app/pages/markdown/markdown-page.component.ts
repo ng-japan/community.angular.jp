@@ -1,19 +1,20 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { MarkdownOutletComponent } from '../../shared/markdown-outlet/markdown-outlet.component';
 
 @Component({
   imports: [MarkdownOutletComponent],
-  template: `<app-markdown-outlet class="h-full" [content]="content" ngSkipHydration />`,
-  styles: [
-    `
+  template: `
+    @defer (hydrate never) {
+    <app-markdown-outlet class="h-full" [content]="content()" />
+    }
+  `,
+  styles: `
       :host {
         display: block;
       }
     `,
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MarkdownPageComponent {
-  @Input({ required: true })
-  readonly content!: string;
+  readonly content = input.required<string>();
 }

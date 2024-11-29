@@ -1,10 +1,10 @@
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ApplicationConfig } from '@angular/core';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideClientHydration, withIncrementalHydration } from '@angular/platform-browser';
 import { provideRouter, withComponentInputBinding, withInMemoryScrolling } from '@angular/router';
 
-import { routes } from './app.routes';
 import { provideAppTitleStrategy } from './app-title-strategy';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,8 +16,8 @@ export const appConfig: ApplicationConfig = {
       }),
       withComponentInputBinding(),
     ),
-    provideHttpClient(),
-    provideClientHydration(),
+    provideHttpClient(withFetch()),
+    provideClientHydration(withIncrementalHydration()),
     provideAppTitleStrategy('Angular Japan User Group'),
   ],
 };
