@@ -23,7 +23,7 @@
     ></div>
     <!-- sidenav -->
     <div
-      class="bg-white shadow z-10 w-64 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out"
+      class="bg-white shadow z-10 w-64 fixed inset-y-0 left-0 transform md:translate-x-0 transition duration-200 ease-in-out"
       [class.-translate-x-full]="!isMenuOpen()"
     >
       <div class="flex justify-center pt-2">
@@ -54,7 +54,7 @@
     </div>
 
     <!-- content -->
-    <div class="flex-1 h-full flex flex-col">
+    <div class="flex-1 h-full flex flex-col ml-0 md:ml-64">
       <main class="flex-1 px-6 py-4">
         <router-outlet></router-outlet>
       </main>
