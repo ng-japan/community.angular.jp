@@ -1,4 +1,7 @@
-<div class="h-screen flex flex-col">
+<div
+  class="h-screen flex flex-col overscroll-contain"
+  [class.overflow-hidden]="isMenuOpen()"
+>
   <header>
     <div class="flex flex-row items-center justify-between h-14 lg:h-16 px-4 text-gray-500 md:hidden">
       <span class="text-xl">Angular Japan User Group</span>
@@ -23,7 +26,7 @@
     ></div>
     <!-- sidenav -->
     <div
-      class="bg-white shadow z-10 w-64 fixed inset-y-0 left-0 transform md:translate-x-0 transition duration-200 ease-in-out"
+      class="bg-white shadow z-10 w-64 fixed top-14 md:top-0 md:h-full left-0 h-[calc(100%-3.5rem)] transform md:translate-x-0 transition duration-200 ease-in-out"
       [class.-translate-x-full]="!isMenuOpen()"
     >
       <div class="flex justify-center pt-2">
