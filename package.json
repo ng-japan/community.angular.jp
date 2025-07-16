@@ -2,16 +2,18 @@
   "name": "community-angular-jp",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "pnpm@10.8.1",
   "scripts": {
     "build": "ng build",
     "format": "prettier --cache --write 'src/**/*.{ts,scss,html}'",
     "format:check": "prettier --cache --check 'src/**/*.{ts,scss,html}'",
-    "lint": "ng lint && yarn format:check",
+    "lint": "ng lint && pnpm format:check",
     "start": "ng serve app",
     "test": "ng test app"
   },
   "engines": {
-    "node": "22"
+    "node": "22",
+    "pnpm": ">=10.8.1"
   },
   "dependencies": {
     "@angular/animations": "19.0.1",
