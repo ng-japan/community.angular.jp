@@ -1,6 +1,6 @@
 name: Deploy to preview channel
 
-on: 
+on:
   pull_request_target:
     paths-ignore:
     - '.github/**'
@@ -11,19 +11,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with: 
+      with:
         ref: ${{github.event.pull_request.head.ref}}
         repository: ${{github.event.pull_request.head.repo.full_name}}
         submodules: true
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
 
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version-file: 'package.json'
+        cache: 'pnpm'
     - name: Install
-      run: yarn install
+      run: pnpm install
     - name: Build
-      run: yarn build
+      run: pnpm build
     - name: Deploy to preview channel
       uses: FirebaseExtended/action-hosting-deploy@v0
       with:
