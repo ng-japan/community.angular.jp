@@ -11,7 +11,6 @@ import { processMarkdown } from '../markdown';
   `,
   styleUrls: ['./markdown-outlet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  // eslint-disable-next-line @angular-eslint/no-host-metadata-property
   host: {
     class: 'markdown-outlet',
   },
