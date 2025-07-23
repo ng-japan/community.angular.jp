@@ -12,7 +12,7 @@
     "test": "ng test app"
   },
   "engines": {
-    "node": "22",
+    "node": "22.17.1",
     "pnpm": ">=10.8.1"
   },
   "dependencies": {
