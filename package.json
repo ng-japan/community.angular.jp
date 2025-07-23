@@ -7,7 +7,7 @@
     "build": "ng build",
     "format": "prettier --cache --write 'src/**/*.{ts,scss,html}'",
     "format:check": "prettier --cache --check 'src/**/*.{ts,scss,html}'",
-    "lint": "ng lint && pnpm format:check",
+    "lint": "eslint ./",
     "start": "ng serve app",
     "test": "ng test app"
   },
@@ -37,14 +37,15 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "19.0.2",
-    "@angular-eslint/builder": "18.4.3",
-    "@angular-eslint/eslint-plugin": "18.4.3",
-    "@angular-eslint/eslint-plugin-template": "18.4.3",
-    "@angular-eslint/schematics": "18.4.3",
-    "@angular-eslint/template-parser": "18.4.3",
+    "@angular-eslint/builder": "19.8.1",
+    "@angular-eslint/eslint-plugin": "19.8.1",
+    "@angular-eslint/eslint-plugin-template": "19.8.1",
+    "@angular-eslint/schematics": "19.8.1",
+    "@angular-eslint/template-parser": "19.8.1",
     "@angular/cli": "19.0.2",
     "@angular/compiler-cli": "19.0.1",
     "@angular/language-service": "19.0.1",
+    "@eslint/js": "^9.31.0",
     "@testing-library/angular": "17.4.0",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jasmine-dom": "1.3.3",
@@ -52,10 +53,11 @@
     "@types/jasmine": "4.6.5",
     "@types/node": "18.19.120",
     "@types/testing-library__jasmine-dom": "^1.3.4",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
+    "@typescript-eslint/eslint-plugin": "7.11.0",
+    "@typescript-eslint/parser": "7.11.0",
+    "angular-eslint": "19.8.1",
     "autoprefixer": "10.4.21",
-    "eslint": "^8.57.1",
+    "eslint": "8.57.1",
     "jasmine-core": "5.4.0",
     "karma": "6.4.4",
     "karma-chrome-launcher": "3.2.0",
@@ -65,6 +67,7 @@
     "postcss": "8.4.49",
     "prettier": "3.0.1",
     "tailwindcss": "3.4.17",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "typescript-eslint": "^8.38.0"
   }
 }

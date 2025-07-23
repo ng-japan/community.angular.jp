@@ -9,6 +9,7 @@ export const api = {
         sanitize: false,
         handlers: {
           link: (h, node) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const { url, children } = node as unknown as { url: string; children: any[] };
             const props = url.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {};
             return h(node, 'a', { href: url, ...props }, children);

@@ -4,7 +4,7 @@ on:
   - pull_request
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     env:
       CI: true
@@ -23,5 +23,24 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm lint
+
+  build:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+      - run: pnpm install
       - run: pnpm test
       - run: pnpm build

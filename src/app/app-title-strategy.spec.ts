@@ -41,6 +41,5 @@ describe('AppTitleStrategy', () => {
 
 @Component({
   template: '',
-  standalone: false,
 })
 class TestPageComponent {}

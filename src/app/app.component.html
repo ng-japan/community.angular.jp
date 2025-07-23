@@ -16,6 +16,7 @@
 
   <div class="relative flex h-full">
     <!-- backdrop -->
+    <!-- eslint-disable-next-line @angular-eslint/template/click-events-have-key-events, @angular-eslint/template/interactive-supports-focus -->
     <div
       class="w-full h-full absolute inset-y-0 left-0 bg-black opacity-60"
       [class.hidden]="!isMenuOpen()"
@@ -29,6 +30,7 @@
       <div class="flex justify-center pt-2">
         <img src="/assets/image/logo.svg" class="w-12" width="96" height="96" alt="ng-japan" />
       </div>
+      <!-- eslint-disable-next-line @angular-eslint/template/click-events-have-key-events, @angular-eslint/template/interactive-supports-focus -->
       <nav appNavList (click)="closeMenu()">
         <a appNavListItem routerLink="/" routerLinkActive [routerLinkActiveOptions]="{ exact: true }">トップ</a>
         <a appNavListItem [routerLink]="'/policy'" routerLinkActive>コミュニティポリシー</a>

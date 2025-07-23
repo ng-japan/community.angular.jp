@@ -1,4 +1,3 @@
-import { By } from '@angular/platform-browser';
 import { RouterLinkActive } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { render } from '@testing-library/angular';
