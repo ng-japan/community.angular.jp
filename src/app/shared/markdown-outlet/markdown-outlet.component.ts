@@ -19,8 +19,8 @@ export class MarkdownOutletComponent {
   readonly #sanitizer = inject(DomSanitizer);
   readonly content = input.required<string | null>();
   readonly renderedContent = resource({
-    request: () => this.content() ?? undefined,
-    loader: async ({ request: content }) => {
+    params: () => this.content() ?? undefined,
+    loader: async ({ params: content }) => {
       const html = await processMarkdown(content);
       return this.#sanitizer.bypassSecurityTrustHtml(html);
     },

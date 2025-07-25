@@ -1,5 +1,6 @@
+import { provideServerRendering } from '@angular/ssr';
+import { BEFORE_APP_SERIALIZED } from '@angular/platform-server';
 import { ApplicationConfig, NgZone, inject, mergeApplicationConfig } from '@angular/core';
-import { BEFORE_APP_SERIALIZED, provideServerRendering } from '@angular/platform-server';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { setTimeout } from 'node:timers/promises';
