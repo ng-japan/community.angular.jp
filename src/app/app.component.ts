@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, signal, VERSION } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ICON_COMPONENTS } from './shared/icons';
 import { NAV_LIST_DIRECTIVES } from './shared/nav-list/nav-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule, NAV_LIST_DIRECTIVES, ICON_COMPONENTS],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, NAV_LIST_DIRECTIVES, ICON_COMPONENTS],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
