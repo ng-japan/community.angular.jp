@@ -18,6 +18,6 @@ export const appConfig: ApplicationConfig = {
     ),
     provideHttpClient(withFetch()),
     provideClientHydration(withIncrementalHydration()),
-    provideAppTitleStrategy('Angular Japan User Group'),
+    provideAppTitleStrategy('Japan Angular User Group'),
   ],
 };
