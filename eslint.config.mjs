@@ -50,9 +50,9 @@ export default tseslint.config(
     },
   },
   {
-    // Everything in this config object targets our HTML files (both external template files,
+    // Everything in this config object targets our HTML files under src/ (external template files,
     // AND inline templates thanks to the processor set in the TypeScript config above)
-    files: ['**/*.html'],
+    files: ['src/**/*.html'],
     extends: [
       // Apply the recommended Angular template rules
       ...angular.configs.templateRecommended,
