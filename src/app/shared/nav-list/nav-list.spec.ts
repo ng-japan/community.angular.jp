@@ -17,7 +17,7 @@ describe('NavListDirective', () => {
 });
 
 describe('NavListItemDirective', () => {
-  it('should render', async () => {
+  it('should render with muted/transparent classes when inactive', async () => {
     const { getByTestId } = await render(`<div appNavListItem data-testid="TEST"></div>`, {
       imports: [NavListItemDirective],
     });
@@ -27,12 +27,15 @@ describe('NavListItemDirective', () => {
       'h-12',
       'px-4',
       'no-underline',
-      'text-black',
-      'hover:bg-gray-100',
+      'font-display',
+      'transition-colors',
+      'border-l-2',
+      'text-muted',
+      'border-transparent',
     );
   });
 
-  it('should change background color if active', async () => {
+  it('should resolve to ink color, brand-1 border and aria-current when route is active', async () => {
     const { getByTestId, detectChanges } = await render(
       `<div appNavListItem data-testid="TEST" routerLink="/active" routerLinkActive></div>`,
       {
@@ -46,6 +49,10 @@ describe('NavListItemDirective', () => {
 
     detectChanges();
 
-    expect(getByTestId('TEST')).toHaveClassName('bg-gray-100');
+    const el = getByTestId('TEST');
+    expect(el).toHaveClassName('text-ink', 'font-semibold', 'border-brand-1');
+    expect(el).not.toHaveClassName('text-muted');
+    expect(el).not.toHaveClassName('border-transparent');
+    expect(el).toHaveAttribute('aria-current', 'page');
   });
 });

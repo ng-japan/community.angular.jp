@@ -4,8 +4,13 @@ import { RouterLinkActive } from '@angular/router';
 @Directive({
   selector: '[appNavListItem]',
   host: {
-    class: 'flex items-center h-12 px-4 no-underline text-black hover:bg-gray-100',
-    '[class.bg-gray-100]': 'active',
+    class: 'flex items-center h-12 px-4 no-underline hover:text-ink font-display transition-colors border-l-2',
+    '[class.text-muted]': '!active',
+    '[class.border-transparent]': '!active',
+    '[class.text-ink]': 'active',
+    '[class.font-semibold]': 'active',
+    '[class.border-brand-1]': 'active',
+    '[attr.aria-current]': 'active ? "page" : null',
   },
 })
 export class NavListItemDirective {

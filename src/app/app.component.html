@@ -1,16 +1,16 @@
 <div class="h-screen flex flex-col" [class.overflow-hidden]="isMenuOpen()">
   <header>
-    <div class="flex flex-row items-center justify-between h-14 lg:h-16 px-4 text-gray-500 md:hidden">
-      <span class="text-xl">Japan Angular User Group</span>
-
+    <div class="flex flex-row items-center gap-3 h-14 px-4 text-ink border-b border-line lg:hidden">
       <button
         aria-label="open menu"
         aria-haspopup="menu"
-        class="flex items-center justify-center w-10 h-10 rounded focus:ring"
+        class="flex items-center justify-center w-10 h-10 rounded focus-visible:ring-2 focus-visible:ring-brand-1"
         (click)="toggleMenu()"
       >
         <app-icon-menu></app-icon-menu>
       </button>
+      <img src="/assets/image/logo.svg" class="w-6 h-6" width="24" height="24" alt="" />
+      <span class="font-display font-bold text-[14px]">Japan Angular User Group</span>
     </div>
   </header>
 
@@ -22,13 +22,14 @@
       [class.hidden]="!isMenuOpen()"
       (click)="closeMenu()"
     ></div>
-    <!-- sidenav -->
+    <!-- sidenav / drawer -->
     <div
-      class="bg-white shadow z-10 w-64 fixed top-14 md:top-0 md:h-full left-0 h-[calc(100%-3.5rem)] transform md:translate-x-0 transition duration-200 ease-in-out"
+      class="bg-white shadow z-10 w-64 fixed top-14 lg:top-0 lg:h-full left-0 h-[calc(100%-3.5rem)] transform lg:translate-x-0 transition duration-200 ease-in-out"
       [class.-translate-x-full]="!isMenuOpen()"
     >
-      <div class="flex justify-center pt-2">
-        <img src="/assets/image/logo.svg" class="w-12" width="96" height="96" alt="ng-japan" />
+      <div class="flex flex-row items-center pt-3 lg:pt-6 pb-4 gap-3 px-4">
+        <img src="/assets/image/logo.svg" class="w-9 h-9 shrink-0" width="36" height="36" alt="ng-japan" />
+        <div class="font-display font-bold text-[13px] text-ink leading-tight">Japan Angular User Group</div>
       </div>
       <!-- eslint-disable-next-line @angular-eslint/template/click-events-have-key-events, @angular-eslint/template/interactive-supports-focus -->
       <nav appNavList (click)="closeMenu()">
@@ -56,16 +57,23 @@
     </div>
 
     <!-- content -->
-    <div class="flex-1 h-full flex flex-col ml-0 md:ml-64">
+    <div class="flex-1 h-full flex flex-col ml-0 lg:ml-64">
       <main class="flex-1 px-6 py-4">
         <router-outlet></router-outlet>
       </main>
 
-      <footer class="text-center p-2">
+      <footer class="text-center p-2 text-muted">
         <div>&copy; Japan Angular User Group</div>
         <div class="flex flex-row gap-x-2 justify-center items-center text-sm">
           <span>Built with Angular v{{ ngVersion }}</span>
-          <a href="https://github.com/ng-japan/community.angular.jp" target="_blank" rel="noopener"> GitHub </a>
+          <a
+            href="https://github.com/ng-japan/community.angular.jp"
+            target="_blank"
+            rel="noopener"
+            class="text-ink underline decoration-2 underline-offset-[4px] decoration-brand-1"
+          >
+            GitHub
+          </a>
         </div>
       </footer>
     </div>

@@ -1,9 +1,14 @@
 <div class="h-full flex flex-col gap-6">
-  <div class="flex flex-row items-center gap-4">
-    <img src="/assets/image/logo.svg" class="w-24 md:w-36" width="96" height="96" alt="ng-japan" />
-
-    <h1 class="text-xl md:text-3xl py-4">日本Angularユーザー会へようこそ!</h1>
-  </div>
+  <section class="hero">
+    <div class="hero-deco" aria-hidden="true">
+      <img src="/assets/image/logo.svg" alt="" />
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-h1 font-display">
+        日本<span class="hero-h1__brand font-display">Angular</span>ユーザー会へようこそ!
+      </h1>
+    </div>
+  </section>
 
   <section>
     <p class="mb-2">
@@ -12,26 +17,51 @@
     </p>
     <p>
       ユーザー会にはどなたでも参加できます。Angularをすでにお使いの方も、これから始めようと思っている方も歓迎します。<br />
-      コミュニティの運営方針については<a [routerLink]="'/policy'">コミュニティポリシー</a>をご確認ください。
+      コミュニティの運営方針については<a
+        [routerLink]="'/policy'"
+        class="text-ink underline decoration-2 underline-offset-[6px] decoration-brand-1"
+        >コミュニティポリシー</a
+      >をご確認ください。
     </p>
   </section>
 
-  <section class="grid grid-flow-row lg:grid-cols-3 gap-4">
+  <section class="grid grid-flow-row lg:grid-cols-2 xl:grid-cols-3 gap-4">
     <app-card class="lg:col-span-2">
       <app-icon-people card-icon></app-icon-people>
       <span card-title>コミュニティに参加する</span>
       <div class="flex flex-col gap-2">
         <p>
-          情報交換やQ&A、お知らせなどに使っているGitHub Discussionsフォーラムはこちら！<br />
-          <a href="https://github.com/ng-japan/community/" target="_blank" rel="noopener"> フォーラムを見る </a>
+          情報交換やQ&Aお知らせなどに使っているGitHub Discussionsフォーラムはこちら！<br />
+          <a
+            href="https://github.com/ng-japan/community/"
+            target="_blank"
+            rel="noopener"
+            class="text-ink underline decoration-2 underline-offset-[4px] decoration-brand-1"
+          >
+            フォーラムを見る
+          </a>
         </p>
         <p>
           カジュアルな雑談や議論などの交流は Discord へご参加ください！<br />
-          <a href="http://join-discord.angular.jp" target="_blank" rel="noopener"> Discordサーバーに参加 </a>
+          <a
+            href="http://join-discord.angular.jp"
+            target="_blank"
+            rel="noopener"
+            class="text-ink underline decoration-2 underline-offset-[4px] decoration-brand-1"
+          >
+            Discordサーバーに参加
+          </a>
         </p>
         <p>
           公式Twitterアカウントでは、イベント情報などを不定期に投稿しています。ぜひフォローしてください！<br />
-          <a href="https://twitter.com/ng_japan" target="_blank" rel="noopener"> &#64;ng_japan をフォロー</a>
+          <a
+            href="https://twitter.com/ng_japan"
+            target="_blank"
+            rel="noopener"
+            class="text-ink underline decoration-2 underline-offset-[4px] decoration-brand-1"
+          >
+            &#64;ng_japan をフォロー
+          </a>
         </p>
       </div>
     </app-card>
@@ -42,7 +72,14 @@
       <p class="mb-4">
         イベントのほとんどはconnpassで公開されます。ぜひグループに参加してイベント情報をGETしてください！
       </p>
-      <a href="https://ngjapan.connpass.com/" target="_blank" rel="noopener"> connpassグループに参加 </a>
+      <a
+        href="https://ngjapan.connpass.com/"
+        target="_blank"
+        rel="noopener"
+        class="text-ink underline decoration-2 underline-offset-[4px] decoration-brand-1"
+      >
+        connpassグループに参加
+      </a>
     </app-card>
 
     <app-card>
@@ -52,7 +89,12 @@
         YouTubeではオンラインイベント「ng-japan
         OnAir」の放送や、オフラインイベントのライブストリーミングなどもおこなっています。<br />
       </p>
-      <a href="https://www.youtube.com/channel/UCayXpiOPFQh9MWePLoEFLmg" target="_blank" rel="noopener">
+      <a
+        href="https://www.youtube.com/channel/UCayXpiOPFQh9MWePLoEFLmg"
+        target="_blank"
+        rel="noopener"
+        class="text-ink underline decoration-2 underline-offset-[4px] decoration-brand-1"
+      >
         YouTubeチャンネルをチェック
       </a>
     </app-card>
@@ -61,10 +103,24 @@
       <app-icon-book card-icon></app-icon-book>
       <span card-title>日本語版Angularドキュメント</span>
       <p class="mb-4">
-        <a href="https://angular.jp/" target="_blank" rel="noopener"> angular.jp </a>
+        <a
+          href="https://angular.jp/"
+          target="_blank"
+          rel="noopener"
+          class="text-ink underline decoration-2 underline-offset-[4px] decoration-brand-1"
+        >
+          angular.jp
+        </a>
         は日本語版のAngular公式ドキュメントです。翻訳に協力してくれるコントリビューターを募集しています！
       </p>
-      <a href="https://github.com/angular/angular-ja" target="_blank" rel="noopener"> 翻訳プロジェクトに参加 </a>
+      <a
+        href="https://github.com/angular/angular-ja"
+        target="_blank"
+        rel="noopener"
+        class="text-ink underline decoration-2 underline-offset-[4px] decoration-brand-1"
+      >
+        翻訳プロジェクトに参加
+      </a>
     </app-card>
 
     <app-card>
@@ -73,7 +129,12 @@
       <p class="mb-4">
         日本各地のローカルコミュニティがイベントを開催しています。お住まいの街の近くにあるコミュニティを探してみましょう！
       </p>
-      <a [routerLink]="'/local'"> ローカルコミュニティを探す </a>
+      <a
+        [routerLink]="'/local'"
+        class="text-ink underline decoration-2 underline-offset-[4px] decoration-brand-1"
+      >
+        ローカルコミュニティを探す
+      </a>
     </app-card>
   </section>
 </div>
