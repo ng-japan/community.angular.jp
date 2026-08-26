@@ -121,8 +121,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0(karma@6.4.4)
       karma-jasmine-html-reporter:
-        specifier: 2.1.0
-        version: 2.1.0(jasmine-core@5.4.0)(karma-jasmine@5.1.0(karma@6.4.4))(karma@6.4.4)
+        specifier: 2.3.0
+        version: 2.3.0(jasmine-core@5.4.0)(karma-jasmine@5.1.0(karma@6.4.4))(karma@6.4.4)
       postcss:
         specifier: 8.4.49
         version: 8.4.49
@@ -270,6 +270,7 @@ packages:
   '@angular/animations@21.2.15':
     resolution: {integrity: sha512-Z8AsLTwc++Fcu0fJnclAF9zMfumAd5KXrwtSdyECqLpqd+lEmmsOpeOl6P7loqdDz99KYh/8UF4eJxdMvnsaKw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
+    deprecated: '@angular/animations is deprecated. Use `animate.enter` and `animate.leave` instead. For more information see: https://v22.angular.dev/guide/animations.'
     peerDependencies:
       '@angular/core': 21.2.15
 
@@ -383,6 +384,7 @@ packages:
   '@angular/platform-browser-dynamic@21.2.15':
     resolution: {integrity: sha512-3xvlWLZlsWjPyJFGatOOsod/f5AFjmSUDoOXo0zsr2ckHc4TxbDTnkLULhRSWv6m68fKOdQb8Si8rI15gC5yqA==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
+    deprecated: '@angular/platform-browser-dynamic is deprecated. Use `@angular/platform-browser` instead.'
     peerDependencies:
       '@angular/common': 21.2.15
       '@angular/compiler': 21.2.15
@@ -2201,6 +2203,7 @@ packages:
   eslint@9.31.0:
     resolution: {integrity: sha512-QldCVh/ztyKJJZLr4jXNUByx3gR+TDYZCRXEktiZoUR3PGy4qCmSbkxcIle8GEwGpb5JBZazlaJ/CxLidXdEbQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -2726,10 +2729,10 @@ packages:
     resolution: {integrity: sha512-yj7hbequkQP2qOSb20GuNSIyE//PgJWHwC2IydLE6XRtsnaflv+/OSGNssPjobYUlhVVagy99TQpqUt3vAUG7A==}
     engines: {node: '>=10.0.0'}
 
-  karma-jasmine-html-reporter@2.1.0:
-    resolution: {integrity: sha512-sPQE1+nlsn6Hwb5t+HHwyy0A1FNCVKuL1192b+XNauMYWThz2kweiBVW1DqloRpVvZIJkIoHVB7XRpK78n1xbQ==}
+  karma-jasmine-html-reporter@2.3.0:
+    resolution: {integrity: sha512-iFDjVpcWHnupRoJfnjuAeNF68sAGk+7RfceCzm33HHYNV6OgBa6EC1nPgJUFM+tVDHLlQ5NhgcTKz7AbdrV3AQ==}
     peerDependencies:
-      jasmine-core: ^4.0.0 || ^5.0.0
+      jasmine-core: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
       karma: ^6.0.0
       karma-jasmine: ^5.0.0
 
@@ -6732,7 +6735,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  karma-jasmine-html-reporter@2.1.0(jasmine-core@5.4.0)(karma-jasmine@5.1.0(karma@6.4.4))(karma@6.4.4):
+  karma-jasmine-html-reporter@2.3.0(jasmine-core@5.4.0)(karma-jasmine@5.1.0(karma@6.4.4))(karma@6.4.4):
     dependencies:
       jasmine-core: 5.4.0
       karma: 6.4.4
